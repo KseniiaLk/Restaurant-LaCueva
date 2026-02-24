@@ -1,8 +1,12 @@
+"use client";
+
 import { Instagram, Facebook } from "lucide-react";
 
 import { Logo } from "./Logo";
+import { useLanguage } from "./LanguageProvider";
 
 export function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -11,20 +15,19 @@ export function Footer() {
   ];
 
   const footerLinks = {
-    About: [
-      { label: "History", href: "#about" },
-      { label: "Team", href: "#about" },
-      { label: "Careers", href: "#" },
+    [t("footer.section.about")]: [
+      { label: t("footer.link.history"), href: "#about" },
+      { label: t("footer.link.team"), href: "#story" },
     ],
-    Services: [
-      { label: "Menu", href: "#menu" },
-      { label: "Reservations", href: "#contact" },
-      { label: "Events", href: "#" },
+    [t("footer.section.services")]: [
+      { label: t("footer.link.menu"), href: "#menu" },
+      { label: t("footer.link.reservations"), href: "#contact" },
+      { label: t("footer.link.events"), href: "#" },
     ],
-    Contact: [
-      { label: "Calle Artilleros 3 03002 Alicante, Spain", href: "#contact" },
-      { label: "+34 604 12 70 64", href: "tel:+34604127064" },
-      { label: "Lacueva708@gmail.com", href: "mailto:Lacueva708@gmail.com" },
+    [t("footer.section.contact")]: [
+      { label: t("contact.info.address.content"), href: "#contact" },
+      { label: t("contact.info.phone.content"), href: "tel:+34604127064" },
+      { label: t("contact.info.email.content"), href: "mailto:Lacueva708@gmail.com" },
     ],
   };
 
@@ -37,7 +40,7 @@ export function Footer() {
               <Logo className="h-24 w-auto" />
             </div>
             <p className="text-primary-foreground/80 mb-6 max-w-sm">
-              Enjoy good food, right in the city.
+              {t("footer.tagline")}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -58,7 +61,7 @@ export function Footer() {
               <h4 className="mb-4 font-medium">{title}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (
-                  <li key={link.label}>
+                  <li key={`${link.label}-${link.href}`}>
                     <a
                       href={link.href}
                       className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -75,20 +78,20 @@ export function Footer() {
         <div className="border-primary-foreground/20 border-t pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <p className="text-primary-foreground/70 text-sm">
-              © {currentYear} La Cueva. All rights reserved.
+              © {currentYear} La Cueva. {t("footer.rights")}
             </p>
             <div className="flex space-x-6 text-sm">
               <a
                 href="#"
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
-                Privacy Policy
+                {t("footer.link.privacy")}
               </a>
               <a
                 href="#"
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
-                Terms of Service
+                {t("footer.link.terms")}
               </a>
             </div>
           </div>
