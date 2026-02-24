@@ -55,29 +55,19 @@ export function Gallery() {
   }, []);
 
   const galleryItems = [
-    { id: "food-1", image: "/All.JPG", category: "food", title: "Gallery" },
-    { id: "food-2", image: "/All.JPG", category: "food", title: "Gallery" },
-    {
-      id: "interior-1",
-      image: "/All.JPG",
-      category: "interior",
-      title: "Gallery",
-    },
-    {
-      id: "interior-2",
-      image: "/All.JPG",
-      category: "interior",
-      title: "Gallery",
-    },
-    { id: "chef-1", image: "/All.JPG", category: "chef", title: "Gallery" },
-    { id: "chef-2", image: "/All.JPG", category: "chef", title: "Gallery" },
+    { id: "food-1", image: "/Food1.png", category: "food", title: "" },
+    { id: "food-2", image: "/Food2.jpg", category: "food", title: "" },
+    { id: "food-3", image: "/Food3.jpg", category: "food", title: "" },
+    { id: "food-4", image: "/Food4.png", category: "food", title: "" },
+    { id: "food-5", image: "/Food5.png", category: "food", title: "" },
+    { id: "food-6", image: "/Food6.jpg", category: "food", title: "" },
+    { id: "food-7", image: "/Food7.png", category: "food", title: "" },
+    { id: "food-8", image: "/Food8.png", category: "food", title: "" },
   ];
 
   const filters = [
     { id: "all", label: t("gallery.filter.all") },
     { id: "food", label: t("gallery.filter.food") },
-    { id: "interior", label: t("gallery.filter.interior") },
-    { id: "chef", label: t("gallery.filter.team") },
   ];
 
   const filteredItems =
@@ -176,13 +166,7 @@ export function Gallery() {
                 alt={item.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="from-black/80 via-black/20 to-transparent absolute inset-0 bg-gradient-to-t opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-serif text-2xl text-white">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
+              <div className="from-black/80 via-black/20 to-transparent absolute inset-0 bg-gradient-to-t opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </motion.div>
             ))}
             </div>

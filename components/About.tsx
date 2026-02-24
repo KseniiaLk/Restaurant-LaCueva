@@ -30,6 +30,13 @@ export function About() {
   return (
     <section id="about" className="bg-background py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex justify-center">
+          <div className="rounded-full border border-primary/30 px-4 py-2">
+            <span className="text-primary text-sm tracking-widest uppercase">
+              {t("about.badge")}
+            </span>
+          </div>
+        </div>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -42,7 +49,7 @@ export function About() {
               <ImageWithFallback
                 src="/RobEsp.jpg"
                 alt="RobEsp"
-                className="h-[500px] w-full object-cover object-[50%_15%]"
+                className="h-[500px] w-full object-cover object-[50%_30%]"
               />
             </div>
             <div className="bg-secondary/20 absolute -bottom-6 -right-6 h-48 w-48 rounded-2xl -z-10" />
@@ -53,13 +60,8 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="mt-6"
           >
-            <div className="mb-6 inline-block rounded-full border border-primary/30 px-4 py-2">
-              <span className="text-primary text-sm tracking-widest uppercase">
-                {t("about.badge")}
-              </span>
-            </div>
-
             <h2 className="text-foreground mb-6 font-serif text-4xl md:text-5xl">
               {t("about.title.line1")}
               <span className="text-primary"> {t("about.title.line2")}</span>
@@ -75,7 +77,7 @@ export function About() {
               </p>
             ) : null}
 
-            <div className="space-y-6">
+            <div className="mt-8 space-y-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}

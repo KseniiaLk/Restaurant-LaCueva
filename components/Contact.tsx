@@ -200,69 +200,8 @@ export function Contact() {
                 </Button>
               </form>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={item.title}
-                className="bg-card rounded-2xl p-6 shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
-                    <item.icon className="text-primary h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-foreground mb-1 font-medium">
-                      {item.title}
-                    </h4>
-                    <p className="text-muted-foreground">{item.content}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-
-            <div className="bg-card overflow-hidden rounded-2xl shadow-lg">
-              <div className="h-64">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=La%20Cueva%20grottan%2C%20Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block h-full w-full"
-                  aria-label="Open address in Google Maps"
-                >
-                  <iframe
-                    title="Calle Artilleros 3 03002 Alicante, Spain"
-                    src="https://maps.google.com/maps?q=Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain&z=17&ie=UTF8&iwloc=B&output=embed"
-                    className="h-full w-full"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </a>
-              </div>
-              <div className="border-border/60 border-t p-3">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=La%20Cueva%20grottan%2C%20Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primary hover:text-primary/80 text-sm font-medium"
-                >
-                  Open in Google Maps
-                </a>
-              </div>
-            </div>
-
-            <div id="events" className="bg-card rounded-2xl p-4 shadow-xl">
+            <div id="events" className="bg-card mt-6 rounded-2xl p-4 shadow-xl">
               <h3 className="text-foreground mb-4 font-serif text-xl">
                 {t("events.form.title")}
               </h3>
@@ -397,6 +336,68 @@ export function Contact() {
                 </Button>
               </form>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            {contactInfo.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="bg-card rounded-2xl p-6 shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                    <item.icon className="text-primary h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-foreground mb-1 font-medium">
+                      {item.title}
+                    </h4>
+                    <p className="text-muted-foreground">{item.content}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+
+            <div className="bg-card overflow-hidden rounded-2xl shadow-lg">
+              <div className="h-64">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=La%20Cueva%20grottan%2C%20Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block h-full w-full"
+                  aria-label="Open address in Google Maps"
+                >
+                  <iframe
+                    title="Calle Artilleros 3 03002 Alicante, Spain"
+                    src="https://maps.google.com/maps?q=Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain&z=17&ie=UTF8&iwloc=B&output=embed"
+                    className="h-full w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </a>
+              </div>
+              <div className="border-border/60 border-t p-3">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=La%20Cueva%20grottan%2C%20Calle%20Artilleros%203%2003002%20Alicante%2C%20Spain"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-primary hover:text-primary/80 text-sm font-medium"
+                >
+                  Open in Google Maps
+                </a>
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </div>

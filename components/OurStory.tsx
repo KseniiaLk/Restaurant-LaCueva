@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "./LanguageProvider";
 
 export function OurStory() {
@@ -22,9 +23,19 @@ export function OurStory() {
               {t("story.title")}
             </span>
           </div>
-          <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
-            {t("story.subtitle")}
-          </p>
+          <div className="mt-8 grid grid-cols-1 items-start gap-8 text-left md:grid-cols-2">
+            <div className="text-muted-foreground space-y-6 text-lg">
+              <p className="whitespace-pre-line">{t("story.subtitle.part1")}</p>
+              {t("story.subtitle.part2") ? (
+                <p className="whitespace-pre-line">{t("story.subtitle.part2")}</p>
+              ) : null}
+            </div>
+            <ImageWithFallback
+              src="/story.jpg"
+              alt="Our Story"
+              className="h-full max-h-[420px] w-full rounded-2xl object-cover"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import * as React from "react";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Button } from "./ui/button";
@@ -8,33 +9,68 @@ import { useLanguage } from "./LanguageProvider";
 
 export function Menu() {
   const { t } = useLanguage();
+  const [showAll, setShowAll] = React.useState(false);
 
   const menuItems = [
     {
+      id: "ribeye-1",
       name: t("menu.item.ribeye.name"),
       description: t("menu.item.ribeye.desc"),
       price: "€65",
-      image: "/4.png",
+      image: "/Food1.png",
     },
     {
+      id: "pasta-1",
       name: t("menu.item.pasta.name"),
       description: t("menu.item.pasta.desc"),
       price: "€48",
-      image: "/1.JPG",
+      image: "/Food2.jpg",
     },
     {
+      id: "salmon-1",
       name: t("menu.item.salmon.name"),
       description: t("menu.item.salmon.desc"),
       price: "€38",
-      image: "/3.png",
+      image: "/Food3.jpg",
     },
     {
+      id: "chocolate-1",
       name: t("menu.item.chocolate.name"),
       description: t("menu.item.chocolate.desc"),
       price: "€18",
-      image: "/2.png",
+      image: "/Food4.png",
+    },
+    {
+      id: "ribeye-2",
+      name: t("menu.item.ribeye.name"),
+      description: t("menu.item.ribeye.desc"),
+      price: "€65",
+      image: "/Food5.png",
+    },
+    {
+      id: "pasta-2",
+      name: t("menu.item.pasta.name"),
+      description: t("menu.item.pasta.desc"),
+      price: "€48",
+      image: "/Food6.jpg",
+    },
+    {
+      id: "salmon-2",
+      name: t("menu.item.salmon.name"),
+      description: t("menu.item.salmon.desc"),
+      price: "€38",
+      image: "/Food7.png",
+    },
+    {
+      id: "chocolate-2",
+      name: t("menu.item.chocolate.name"),
+      description: t("menu.item.chocolate.desc"),
+      price: "€18",
+      image: "/Food8.png",
     },
   ];
+
+  const visibleItems = showAll ? menuItems : menuItems.slice(0, 4);
 
   return (
     <section id="menu" className="bg-muted/30 py-20 md:py-32">
@@ -61,9 +97,9 @@ export function Menu() {
         </motion.div>
 
         <div className="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {menuItems.map((item) => (
+          {visibleItems.map((item) => (
             <div
-              key={item.name}
+              key={item.id}
               className="bg-card overflow-hidden rounded-2xl shadow-lg"
             >
               <ImageWithFallback
@@ -98,8 +134,9 @@ export function Menu() {
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-8 py-4 transition-all hover:scale-105"
+            onClick={() => setShowAll((current) => !current)}
           >
-            {t("menu.cta")}
+            {showAll ? t("menu.cta.less") : t("menu.cta")}
           </Button>
         </motion.div>
       </div>

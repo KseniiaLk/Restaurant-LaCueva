@@ -56,16 +56,6 @@ export function Header() {
 
           <div className="hidden items-center gap-3 md:flex ml-auto">
             <Button
-              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8]"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              {t("nav.book")}
-            </Button>
-            <Button
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() =>
                 document
@@ -74,6 +64,16 @@ export function Header() {
               }
             >
               {t("nav.event")}
+            </Button>
+            <Button
+              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8]"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              {t("nav.book")}
             </Button>
             <Button
               variant="outline"
@@ -108,17 +108,6 @@ export function Header() {
               ))}
               <div className="flex items-center gap-3">
                 <Button
-                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  {t("nav.book")}
-                </Button>
-                <Button
                   className="bg-primary text-primary-foreground hover:bg-primary/90 flex-1"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -128,6 +117,17 @@ export function Header() {
                   }}
                 >
                   {t("nav.event")}
+                </Button>
+                <Button
+                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {t("nav.book")}
                 </Button>
                 <Button
                   variant="outline"

@@ -35,7 +35,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title.line1": "Where Taste Creates",
     "about.title.line2": "Memories",
     "about.paragraph1":
-      "Welcome to our Swedish restaurant. Here, everything is prepared from scratch — with care, love, and deep respect for the ingredients. We serve Swedish cuisine of the highest quality, rich in flavor and tradition. And above all — with sauces at the heart of it all, just the way we believe it should be. Step inside and we’ll gladly tell you more. A warm welcome to you 💛",
+      "Grottan La Cueva is not just another restaurant. Here, you are welcomed with genuine passion and a deep love for Scandinavian cuisine — everything prepared from scratch with care, quality, and pride. More than a meal, it’s a personal experience. With warmth, laughter, and heartfelt hospitality, we create a place where you can relax, connect, and simply enjoy. We care for our guests the way we care for our food — wholeheartedly. No matter who you are or where you come from, at Grottan La Cueva you will always feel at home.",
     "about.paragraph2": "",
     "about.feature.experience.title": "Enjoy every bite",
     "about.feature.experience.desc": "",
@@ -44,8 +44,10 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Quality without pretension",
     "about.feature.michelin.desc": "",
     "story.title": "Our Story",
-    "story.subtitle":
-      "A simple idea, a warm table, and a love for honest food — that is how our story began.",
+    "story.subtitle.part1":
+      "We’ve been best friends for over ten years and have previously worked together — though in very different industries. What truly connects us is our shared drive to always do things better.\nSo when the opportunity came to create a different, personal, and genuinely fun restaurant in Alicante, we didn’t hesitate. Because great food is never just about what’s on the plate — it’s about warmth, atmosphere, and feeling at home.",
+    "story.subtitle.part2":
+      "As passionate food creators, we share a special Scandinavian love for sauces — the kind that elevate classic meat, fish, and even desserts. Everything is prepared from scratch using the highest-quality ingredients. Cutting corners is simply not who we are. And we enjoy every single day — because when flavor and laughter come together, that’s the best recipe of all.",
     "menu.badge": "Our Menu",
     "menu.title.line1": "Exquisite",
     "menu.title.line2": "Dishes",
@@ -60,6 +62,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.chocolate.name": "Chocolate Mousse",
     "menu.item.chocolate.desc": "Belgian chocolate dessert with berry sauce",
     "menu.cta": "View Full Menu",
+    "menu.cta.less": "Show Less",
     "reviews.title": "Our rewies",
     "reviews.subtitle": "Guests share their experience with us.",
     "gallery.badge": "Gallery",
@@ -151,8 +154,9 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Calidad sin pretensiones",
     "about.feature.michelin.desc": "",
     "story.title": "Nuestra historia",
-    "story.subtitle":
+    "story.subtitle.part1":
       "Una idea sencilla, una mesa cálida y el amor por la comida honesta — así comenzó nuestra historia.",
+    "story.subtitle.part2": "",
     "menu.badge": "Nuestro menú",
     "menu.title.line1": "Platos",
     "menu.title.line2": "Exquisitos",
@@ -168,6 +172,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.chocolate.name": "Mousse de chocolate",
     "menu.item.chocolate.desc": "Postre belga con salsa de frutos rojos",
     "menu.cta": "Ver menú completo",
+    "menu.cta.less": "Ver menos",
     "reviews.title": "Reseñas",
     "reviews.subtitle": "Nuestros clientes comparten su experiencia.",
     "gallery.badge": "Galería",
@@ -270,6 +275,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.chocolate.name": "Chokladmousse",
     "menu.item.chocolate.desc": "Belgisk dessert med bärsås",
     "menu.cta": "Se hela menyn",
+    "menu.cta.less": "Visa mindre",
     "reviews.title": "Omdömen",
     "reviews.subtitle": "Gäster delar sin upplevelse med oss.",
     "gallery.badge": "Galleri",
@@ -330,8 +336,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.link.terms": "Användarvillkor",
     "footer.rights": "Alla rättigheter förbehållna.",
     "story.title": "Vår historia",
-    "story.subtitle":
+    "story.subtitle.part1":
       "En enkel idé, ett varmt bord och kärlek till ärlig mat — så började vår historia.",
+    "story.subtitle.part2": "",
   },
 };
 
