@@ -22,7 +22,11 @@ const getClientIp = (request: NextRequest) => {
   if (forwarded) {
     return forwarded.split(",")[0]?.trim() || "unknown";
   }
-  return request.ip ?? "unknown";
+  const realIp = request.headers.get("x-real-ip");
+  if (realIp) {
+    return realIp.trim();
+  }
+  return "unknown";
 };
 
 const isRateLimited = (ip: string) => {
