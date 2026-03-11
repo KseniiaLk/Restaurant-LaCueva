@@ -24,7 +24,7 @@ export function OurStory() {
             </span>
           </div>
           <div className="mt-8 grid grid-cols-1 items-start gap-8 text-left md:grid-cols-2">
-            <div className="text-muted-foreground space-y-6 text-lg">
+            <div className="text-foreground/90 space-y-6 text-base md:text-lg leading-relaxed">
               <p className="whitespace-pre-line">{t("story.subtitle.part1")}</p>
               {t("story.subtitle.part2") ? (
                 <p className="whitespace-pre-line">{t("story.subtitle.part2")}</p>

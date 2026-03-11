@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
@@ -13,8 +14,13 @@ import { useLanguage } from "./LanguageProvider";
 
 export function Contact() {
   const { t } = useLanguage();
+  const EMAILJS_SERVICE_ID = "service_lwi4o5j";
+  const EMAILJS_TEMPLATE_ID = "template_lnb2p0s";
+  const EMAILJS_PUBLIC_KEY = "ol8m9qtnLYjQWqHvS";
+  const RESTAURANT_EMAIL = "lacuevarestlacueva@gmail.com";
   const [formData, setFormData] = React.useState({
     name: "",
+    email: "",
     phone: "",
     date: "",
     time: "",
@@ -22,6 +28,7 @@ export function Contact() {
   });
   const [eventData, setEventData] = React.useState({
     name: "",
+    email: "",
     phone: "",
     date: "",
     time: "",
@@ -30,24 +37,90 @@ export function Contact() {
     message: "",
   });
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    toast.success(t("contact.toast"));
-    setFormData({ name: "", phone: "", date: "", time: "", guests: "2" });
+    try {
+      const params = {
+        email: formData.email,
+        user_name: formData.name,
+        reservation_date: formData.date,
+        reservation_time: formData.time,
+        guests: formData.guests,
+      };
+
+      await Promise.all([
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        }),
+        emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            ...params,
+            email: RESTAURANT_EMAIL,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY },
+        ),
+      ]);
+
+      toast.success(t("contact.toast"));
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        guests: "2",
+      });
+    } catch (error) {
+      console.error("EmailJS reservation error", error);
+      toast.error(t("contact.toastError"));
+    }
   };
 
-  const handleEventSubmit = (event: React.FormEvent) => {
+  const handleEventSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    toast.success(t("events.toast"));
-    setEventData({
-      name: "",
-      phone: "",
-      date: "",
-      time: "",
-      guests: "10",
-      type: "private",
-      message: "",
-    });
+    try {
+      const params = {
+        email: eventData.email,
+        user_name: eventData.name,
+        reservation_date: eventData.date,
+        reservation_time: eventData.time,
+        guests: eventData.guests,
+        event_type: eventData.type,
+        message: eventData.message,
+      };
+
+      await Promise.all([
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        }),
+        emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            ...params,
+            email: RESTAURANT_EMAIL,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY },
+        ),
+      ]);
+
+      toast.success(t("events.toast"));
+      setEventData({
+        name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        guests: "10",
+        type: "private",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS event error", error);
+      toast.error(t("events.toastError"));
+    }
   };
 
   const contactInfo = [
@@ -124,6 +197,22 @@ export function Contact() {
 
                 <div>
                   <label className="text-foreground mb-2 block text-sm">
+                    {t("contact.form.email")}
+                  </label>
+                  <Input
+                    type="email"
+                    value={formData.email}
+                    onChange={(event) =>
+                      setFormData({ ...formData, email: event.target.value })
+                    }
+                    placeholder="name@email.com"
+                    required
+                    className="w-full"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-foreground mb-2 block text-sm">
                     {t("contact.form.phone")}
                   </label>
                   <Input
@@ -158,15 +247,18 @@ export function Contact() {
                     <label className="text-foreground mb-2 block text-sm">
                       {t("contact.form.time")}
                     </label>
-                    <Input
-                      type="time"
-                      value={formData.time}
-                      onChange={(event) =>
-                        setFormData({ ...formData, time: event.target.value })
-                      }
-                      required
-                      className="w-full"
-                    />
+                  <Input
+                    type="time"
+                    value={formData.time}
+                    onChange={(event) =>
+                      setFormData({ ...formData, time: event.target.value })
+                    }
+                    min="18:30"
+                    max="00:30"
+                    step={1800}
+                    required
+                    className="w-full"
+                  />
                   </div>
                 </div>
 
@@ -224,6 +316,22 @@ export function Contact() {
 
                 <div>
                   <label className="text-foreground mb-2 block text-sm">
+                    {t("events.form.email")}
+                  </label>
+                  <Input
+                    type="email"
+                    value={eventData.email}
+                    onChange={(event) =>
+                      setEventData({ ...eventData, email: event.target.value })
+                    }
+                    placeholder="name@email.com"
+                    required
+                    className="h-7 w-full text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-foreground mb-2 block text-sm">
                     {t("events.form.phone")}
                   </label>
                   <Input
@@ -258,15 +366,18 @@ export function Contact() {
                     <label className="text-foreground mb-2 block text-sm">
                       {t("events.form.time")}
                     </label>
-                    <Input
-                      type="time"
-                      value={eventData.time}
-                      onChange={(event) =>
-                        setEventData({ ...eventData, time: event.target.value })
-                      }
-                      required
-                      className="h-7 w-full text-sm"
-                    />
+                  <Input
+                    type="time"
+                    value={eventData.time}
+                    onChange={(event) =>
+                      setEventData({ ...eventData, time: event.target.value })
+                    }
+                    min="18:30"
+                    max="00:30"
+                    step={1800}
+                    required
+                    className="h-7 w-full text-sm"
+                  />
                   </div>
                 </div>
 

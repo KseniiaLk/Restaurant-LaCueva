@@ -62,17 +62,17 @@ export function About() {
             viewport={{ once: true }}
             className="mt-6"
           >
-            <h2 className="text-foreground mb-6 font-serif text-4xl md:text-5xl">
+            <h2 className="text-foreground mb-6 font-cormorant text-4xl md:text-5xl font-semibold leading-tight">
               {t("about.title.line1")}
               <span className="text-primary"> {t("about.title.line2")}</span>
             </h2>
 
-            <p className="text-muted-foreground mb-6 text-lg">
+            <p className="text-foreground/90 mb-6 text-base md:text-lg leading-relaxed">
               {t("about.paragraph1")}
             </p>
 
             {t("about.paragraph2") ? (
-              <p className="text-muted-foreground mb-8 text-lg">
+              <p className="text-foreground/90 mb-8 text-base md:text-lg leading-relaxed">
                 {t("about.paragraph2")}
               </p>
             ) : null}
@@ -81,21 +81,21 @@ export function About() {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  className="flex items-start space-x-4"
+                  className="flex items-start gap-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                  <div className="bg-transparent flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-primary">
                     <feature.icon className="text-primary h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="text-foreground mb-1 font-medium">
+                    <h4 className="text-foreground mb-1 text-sm font-semibold uppercase tracking-widest">
                       {feature.title}
                     </h4>
                     {feature.description ? (
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground text-sm">
                         {feature.description}
                       </p>
                     ) : null}

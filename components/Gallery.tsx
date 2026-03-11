@@ -55,7 +55,7 @@ export function Gallery() {
   }, []);
 
   const galleryItems = [
-    { id: "food-1", image: "/Food1.png", category: "food", title: "" },
+    { id: "food-0", image: "/Food.png", category: "food", title: "" },
     { id: "food-2", image: "/Food2.jpg", category: "food", title: "" },
     { id: "food-3", image: "/Food3.jpg", category: "food", title: "" },
     { id: "food-4", image: "/Food4.png", category: "food", title: "" },
@@ -164,7 +164,7 @@ export function Gallery() {
               <ImageWithFallback
                 src={item.image}
                 alt={item.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 ${item.image === "/Food2.jpg" ? "object-[60%_center]" : ""}`}
               />
               <div className="from-black/80 via-black/20 to-transparent absolute inset-0 bg-gradient-to-t opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </motion.div>

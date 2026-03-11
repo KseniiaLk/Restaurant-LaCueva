@@ -30,18 +30,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mt-24 mb-4 inline-block translate-y-10 rounded-full border border-secondary/30 px-4 py-2">
-            <span className="text-secondary text-sm tracking-widest uppercase">
-              {t("hero.badge")}
+          <div className="-mb-8 flex justify-center">
+            <Logo className="h-[24rem] w-auto md:h-[32rem]" />
+          </div>
+          <div className="mb-4 mt-2 flex justify-center">
+            <span className="text-white/80 text-2xl md:text-3xl font-light tracking-[0.22em]">
+              GROTTAN
             </span>
           </div>
 
-          <div className="-mb-8 flex justify-center">
-            <Logo className="h-[22rem] w-auto md:h-[30rem]" />
-          </div>
-
           <h1
-            className="mb-4 font-serif text-white"
+            className="mt-10 mb-8 font-serif text-white"
             style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: "1.2" }}
           >
             {t("hero.title.line1")}{" "}
@@ -65,18 +64,6 @@ export function Hero() {
               size="lg"
             >
               {t("hero.cta.menu")}
-            </Button>
-            <Button
-              onClick={() =>
-                document.getElementById("about")?.scrollIntoView({
-                  behavior: "smooth",
-                })
-              }
-              variant="outline"
-              className="hover:bg-white/10 rounded-lg border-2 border-white/80 bg-transparent px-8 py-4 text-white transition-all hover:scale-105"
-              size="lg"
-            >
-              {t("hero.cta.about")}
             </Button>
           </motion.div>
         </motion.div>

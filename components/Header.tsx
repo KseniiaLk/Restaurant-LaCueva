@@ -33,7 +33,7 @@ export function Header() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-primary/90 backdrop-blur-md shadow-md"
+          ? "bg-primary shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -56,7 +56,7 @@ export function Header() {
 
           <div className="hidden items-center gap-3 md:flex ml-auto">
             <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8]"
               onClick={() =>
                 document
                   .getElementById("events")
@@ -66,7 +66,7 @@ export function Header() {
               {t("nav.event")}
             </Button>
             <Button
-              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8]"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() =>
                 document
                   .getElementById("contact")
@@ -108,7 +108,7 @@ export function Header() {
               ))}
               <div className="flex items-center gap-3">
                 <Button
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 flex-1"
+                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     document
@@ -119,7 +119,7 @@ export function Header() {
                   {t("nav.event")}
                 </Button>
                 <Button
-                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 flex-1"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     document

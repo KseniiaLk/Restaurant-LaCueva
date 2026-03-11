@@ -10,56 +10,16 @@ import { useLanguage } from "./LanguageProvider";
 export function Menu() {
   const { t } = useLanguage();
   const [showAll, setShowAll] = React.useState(false);
+  const [activeFilter, setActiveFilter] = React.useState("all");
 
   const menuItems = [
-    {
-      id: "ribeye-1",
-      name: t("menu.item.foto1.name"),
-      description: t("menu.item.foto1.desc"),
-      price: "€22",
-      image: "/Food1.png",
-    },
-    {
-      id: "pasta-1",
-      name: t("menu.item.foto2.name"),
-      description: t("menu.item.foto2.desc"),
-      price: "€20",
-      image: "/Food2.jpg",
-    },
-    {
-      id: "salmon-1",
-      name: t("menu.item.foto3.name"),
-      description: t("menu.item.foto3.desc"),
-      price: "€19",
-      image: "/Food3.jpg",
-    },
-    {
-      id: "chocolate-1",
-      name: t("menu.item.chocolate.name"),
-      description: t("menu.item.chocolate.desc"),
-      price: "€8",
-      image: "/Food4.png",
-    },
-    {
-      id: "ribeye-2",
-      name: t("menu.item.foto5.name"),
-      description: t("menu.item.foto5.desc"),
-      price: "€20",
-      image: "/Food5.png",
-    },
-    {
-      id: "pasta-2",
-      name: t("menu.item.foto6.name"),
-      description: t("menu.item.foto6.desc"),
-      price: "€11",
-      image: "/Food6.jpg",
-    },
     {
       id: "salmon-2",
       name: t("menu.item.foto7.name"),
       description: t("menu.item.foto7.desc"),
       price: "€11",
       image: "/Food7.png",
+      category: "entradas",
     },
     {
       id: "chocolate-2",
@@ -67,10 +27,87 @@ export function Menu() {
       description: t("menu.item.foto8.desc"),
       price: "€11",
       image: "/Food8.png",
+      category: "entradas",
+    },
+    {
+      id: "ribeye-1",
+      name: t("menu.item.foto1.name"),
+      description: t("menu.item.foto1.desc"),
+      price: "€22",
+      image: "/Food.png",
+      category: "plato-principal",
+    },
+    {
+      id: "pasta-1",
+      name: t("menu.item.foto2.name"),
+      description: t("menu.item.foto2.desc"),
+      price: "€20",
+      image: "/Food2.jpg",
+      category: "plato-principal",
+    },
+    {
+      id: "salmon-1",
+      name: t("menu.item.foto3.name"),
+      description: t("menu.item.foto3.desc"),
+      price: "€19",
+      image: "/Food3.jpg",
+      category: "plato-principal",
+    },
+    {
+      id: "ribeye-2",
+      name: t("menu.item.foto5.name"),
+      description: t("menu.item.foto5.desc"),
+      price: "€20",
+      image: "/Food5.png",
+      category: "plato-principal",
+    },
+    {
+      id: "food-9",
+      name: t("menu.item.food9.name"),
+      description: t("menu.item.food9.desc"),
+      price: "€18",
+      image: "/Food9.png",
+      category: "plato-principal",
+    },
+    {
+      id: "food-10",
+      name: t("menu.item.food10.name"),
+      description: t("menu.item.food10.desc"),
+      price: "€24",
+      image: "/Food10.png",
+      category: "plato-principal",
+    },
+    {
+      id: "pasta-2",
+      name: t("menu.item.foto6.name"),
+      description: t("menu.item.foto6.desc"),
+      price: "€11",
+      image: "/Food6.jpg",
+      category: "postres",
+    },
+    {
+      id: "chocolate-1",
+      name: t("menu.item.chocolate.name"),
+      description: t("menu.item.chocolate.desc"),
+      price: "€8",
+      image: "/Food4.png",
+      category: "postres",
     },
   ];
 
-  const visibleItems = showAll ? menuItems : menuItems.slice(0, 4);
+  const filters = [
+    { id: "all", label: t("menu.filter.all") },
+    { id: "entradas", label: t("menu.filter.entradas") },
+    { id: "plato-principal", label: t("menu.filter.platoPrincipal") },
+    { id: "postres", label: t("menu.filter.postres") },
+  ];
+
+  const filteredItems =
+    activeFilter === "all"
+      ? menuItems
+      : menuItems.filter((item) => item.category === activeFilter);
+
+  const visibleItems = showAll ? filteredItems : filteredItems.slice(0, 4);
 
   return (
     <section id="menu" className="bg-muted/30 py-20 md:py-32">
@@ -96,6 +133,31 @@ export function Menu() {
           </p>
         </motion.div>
 
+        <motion.div
+          className="mb-10 flex flex-wrap justify-center gap-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => {
+                setActiveFilter(filter.id);
+                setShowAll(false);
+              }}
+              className={`rounded-full px-6 py-2 transition-all ${
+                activeFilter === filter.id
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-foreground hover:bg-muted/80"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </motion.div>
+
         <div className="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {visibleItems.map((item) => (
             <div
@@ -105,7 +167,7 @@ export function Menu() {
               <ImageWithFallback
                 src={item.image}
                 alt={item.name}
-                className="h-56 w-full object-cover"
+                className={`h-56 w-full object-cover ${item.image === "/Food2.jpg" ? "object-[60%_center]" : ""}`}
               />
               <div className="p-4">
                 <div className="mb-2 flex items-start justify-between gap-2">
