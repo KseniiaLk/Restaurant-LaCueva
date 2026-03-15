@@ -33,7 +33,7 @@ export function Reviews() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-foreground mb-4 font-serif text-4xl md:text-5xl">
             {t("reviews.title")}
@@ -44,10 +44,14 @@ export function Reviews() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {reviews.map((review) => (
-            <div
+          {reviews.map((review, index) => (
+            <motion.div
               key={review.name}
               className="bg-card rounded-2xl p-6 shadow-lg"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true, amount: 0.2 }}
             >
               <div className="mb-2 flex items-center justify-between">
                 <h3 className="text-foreground font-medium">{review.name}</h3>
@@ -56,7 +60,7 @@ export function Reviews() {
                 </span>
               </div>
               <p className="text-muted-foreground text-sm">{review.text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

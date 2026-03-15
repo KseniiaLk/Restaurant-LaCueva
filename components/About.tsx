@@ -30,19 +30,25 @@ export function About() {
   return (
     <section id="about" className="bg-background py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 flex justify-center">
+        <motion.div
+          className="mb-10 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="rounded-full border border-primary/30 px-4 py-2">
             <span className="text-primary text-sm tracking-widest uppercase">
               {t("about.badge")}
             </span>
           </div>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="relative"
           >
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -59,7 +65,7 @@ export function About() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="mt-6"
           >
             <h2 className="text-foreground mb-6 font-cormorant text-4xl md:text-5xl font-semibold leading-tight">
@@ -85,7 +91,7 @@ export function About() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                 >
                   <div className="bg-transparent flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-primary">
                     <feature.icon className="text-primary h-6 w-6" />

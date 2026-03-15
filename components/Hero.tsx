@@ -8,7 +8,7 @@ import { Logo } from "./Logo";
 import { useLanguage } from "./LanguageProvider";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, language, toggleLanguage } = useLanguage();
 
   return (
     <section
@@ -30,26 +30,24 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="-mb-24 flex justify-center">
+            <span className="text-white/80 text-2xl font-light tracking-[0.22em] normal-case md:text-3xl">
+              Grottan
+            </span>
+          </div>
           <div className="-mb-8 flex justify-center">
             <Logo className="h-[24rem] w-auto md:h-[32rem]" />
           </div>
-          <div className="mb-4 mt-2 flex justify-center">
-            <span className="text-white/80 text-2xl md:text-3xl font-light tracking-[0.22em]">
-              GROTTAN
-            </span>
-          </div>
 
-          <h1
-            className="mt-10 mb-8 font-serif text-white"
-            style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: "1.2" }}
-          >
-            {t("hero.title.line1")}{" "}
-            <span className="text-white">{t("hero.title.line2")}</span>
+          <h1 className="mt-10 mb-16 text-center">
+            <span className="text-white/80 text-2xl font-light tracking-[0.22em] normal-case md:text-3xl">
+              {t("hero.title.line1")} {t("hero.title.line2")}
+            </span>
           </h1>
 
 
           <motion.div
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -60,10 +58,30 @@ export function Hero() {
                   behavior: "smooth",
                 })
               }
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-8 py-4 transition-all hover:scale-105"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full border border-primary/30 px-6 py-2 text-sm tracking-widest uppercase transition-all hover:scale-105"
               size="lg"
             >
               {t("hero.cta.menu")}
+            </Button>
+          </motion.div>
+          <motion.div
+            className="mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleLanguage}
+              className="border-primary/50 text-primary hover:bg-primary/10 h-9 rounded-lg px-4 gap-2"
+            >
+              <span className="text-lg leading-none">
+                {language === "en" && "🇬🇧"}
+                {language === "es" && "🇪🇸"}
+                {language === "sv" && "🇸🇪"}
+              </span>
+              {language.toUpperCase()}
             </Button>
           </motion.div>
         </motion.div>

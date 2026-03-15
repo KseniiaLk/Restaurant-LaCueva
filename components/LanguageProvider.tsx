@@ -24,8 +24,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Book a Table",
     "nav.event": "Book an Event",
     "hero.badge": "Fine Dining Experience",
-    "hero.title.line1": "A Good Laugh,",
-    "hero.title.line2": "A Better Taste",
+    "hero.title.line1": "Where flavor meets fun",
+    "hero.title.line2": "a better taste",
     "hero.subtitle":
       "Experience culinary excellence in an atmosphere of refined elegance",
     "hero.cta.menu": "View Menu",
@@ -44,6 +44,8 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Quality without pretension",
     "about.feature.michelin.desc": "",
     "story.title": "Our Story",
+    "story.heading.line1": "When laughter and good mood create an unforgettable",
+    "story.heading.line2": "memory",
     "story.subtitle.part1":
       "We’ve been best friends for over ten years and have previously worked together — though in very different industries. What truly connects us is our shared drive to always do things better.\nSo when the opportunity came to create a different, personal, and genuinely fun restaurant in Alicante, we didn’t hesitate. Because great food is never just about what’s on the plate — it’s about warmth, atmosphere, and feeling at home.",
     "story.subtitle.part2":
@@ -59,9 +61,10 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.filter.postres": "Desserts",
     "menu.item.ribeye.name": "Ribeye Steak",
     "menu.item.ribeye.desc": "Premium beef with red wine sauce and truffle oil",
-    "menu.item.foto1.name": "Iberico secreto",
+    "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
       "Iberico flank steak with béarnaise and your choice of potatoes.\nGratin or wedges",
+    "menu.signature": "Signature",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravlax with dill-stewed potatoes",
     "menu.item.food9.name": "Meatballs with juniper and cream sauce",
@@ -80,9 +83,9 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.salmon.name": "Salmon Tartare",
     "menu.item.salmon.desc": "Fresh salmon tartare with avocado and caviar",
     "menu.item.foto7.name": "Gravlaxtoast",
-    "menu.item.foto7.desc": "Gravlax toast with mustard-dill sauce\n½ 7 €",
+    "menu.item.foto7.desc": "Gravlaxtoast with mustard-dill sauce",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen portion\n½ 7 €",
+    "menu.item.foto8.desc": "Toast Skagen portion",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare with mashed potatoes, lingonberries, peas, and browned butter",
@@ -163,7 +166,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Reservar mesa",
     "nav.event": "Reservar evento",
     "hero.badge": "Experiencia de alta cocina",
-    "hero.title.line1": "Una buena risa,",
+    "hero.title.line1": "Donde el sabor se encuentra con la diversión",
     "hero.title.line2": "un mejor sabor",
     "hero.subtitle":
       "Vive la excelencia culinaria en un ambiente de elegancia refinada",
@@ -184,6 +187,8 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Calidad sin pretensiones",
     "about.feature.michelin.desc": "",
     "story.title": "Nuestra historia",
+    "story.heading.line1": "Cuando la risa y el buen humor crean un recuerdo",
+    "story.heading.line2": "inolvidable",
     "story.subtitle.part1":
       "Hemos sido mejores amigos durante más de diez años y ya hemos trabajado juntos — aunque en industrias muy diferentes. Lo que realmente nos une es nuestro impulso compartido de hacer las cosas cada vez mejor.\nCuando surgió la oportunidad de crear en Alicante un restaurante diferente, personal y genuinamente divertido, no lo dudamos. Porque la gran comida nunca es solo lo que hay en el plato: es calidez, ambiente y sentirse como en casa.",
     "story.subtitle.part2":
@@ -199,9 +204,10 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.ribeye.name": "Bistec Ribeye",
     "menu.item.ribeye.desc":
       "Carne premium con salsa de vino tinto y aceite de trufa",
-    "menu.item.foto1.name": "Iberico secreto",
+    "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
-      "Secreto ibérico con salsa bearnesa y patata a elección.\nGratinada o gajos",
+      "El Secreto de la Cueva con salsa bearnesa y patata a elección.\nGratinada o gajos",
+    "menu.signature": "Especialidad",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravlax con patatas al eneldo",
     "menu.item.food9.name": "Albóndigas suecas con salsa de enebro y nata",
@@ -221,9 +227,9 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.salmon.name": "Tartar de salmón",
     "menu.item.salmon.desc": "Salmón fresco con aguacate y caviar",
     "menu.item.foto7.name": "Gravlaxtoast",
-    "menu.item.foto7.desc": "Tosta de gravlax con salsa de mostaza y eneldo\n½ 7 €",
+    "menu.item.foto7.desc": "Gravlaxtoast con salsa de mostaza y eneldo",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen (porción)\n½ 7 €",
+    "menu.item.foto8.desc": "Toast Skagen (porción)",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare con puré de patata, arándanos rojos, guisantes y mantequilla avellanada",
@@ -304,7 +310,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Boka bord",
     "nav.event": "Boka event",
     "hero.badge": "Fine dining‑upplevelse",
-    "hero.title.line1": "Ett gott skratt,",
+    "hero.title.line1": "Där smak möter skoj",
     "hero.title.line2": "ännu bättre smak",
     "hero.subtitle":
       "Upplev kulinarisk excellens i en elegant atmosfär",
@@ -333,9 +339,10 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.filter.postres": "Efterrätter",
     "menu.item.ribeye.name": "Ribeye‑stek",
     "menu.item.ribeye.desc": "Premiumbiff med rödvinssås och tryffelolja",
-    "menu.item.foto1.name": "Iberico secreto",
+    "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
       "Iberisk flankstek med bearnaisesås och valfri potatis.\nGratäng eller klyftpotatis",
+    "menu.signature": "Signatur",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravad lax med dillstuvad potatis",
     "menu.item.food9.name": "Köttbullar med enbär och gräddsås",
@@ -354,9 +361,9 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.salmon.name": "Lax­tartar",
     "menu.item.salmon.desc": "Färsk lax med avokado och kaviar",
     "menu.item.foto7.name": "Gravlaxtoast",
-    "menu.item.foto7.desc": "Gravad lax-toast med hovmästarsås\n½ 7 €",
+    "menu.item.foto7.desc": "Gravlaxtoast med hovmästarsås",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen portion\n½ 7 €",
+    "menu.item.foto8.desc": "Toast Skagen portion",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare med potatispuré, lingon, ärtor och brynt smör",
@@ -427,6 +434,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.link.terms": "Användarvillkor",
     "footer.rights": "Alla rättigheter förbehållna.",
     "story.title": "Vår historia",
+    "story.heading.line1": "När skratt och gott humör skapar ett oförglömligt",
+    "story.heading.line2": "minne",
     "story.subtitle.part1":
       "Vi har varit bästa vänner i över tio år och har tidigare arbetat tillsammans — om än i helt olika branscher. Det som verkligen förenar oss är vår gemensamma drivkraft att alltid göra saker bättre.\nNär möjligheten kom att skapa en annorlunda, personlig och genuint rolig restaurang i Alicante tvekade vi inte. För riktigt god mat handlar aldrig bara om det som ligger på tallriken — det handlar om värme, stämning och att känna sig hemma.",
     "story.subtitle.part2":

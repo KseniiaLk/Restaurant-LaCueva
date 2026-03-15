@@ -4,13 +4,12 @@ import * as React from "react";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "./ui/button";
-import { Logo } from "./Logo";
 import { useLanguage } from "./LanguageProvider";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const { t, language, toggleLanguage } = useLanguage();
+  const { t } = useLanguage();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +24,6 @@ export function Header() {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.story"), href: "#story" },
     { label: t("nav.menu"), href: "#menu" },
-    { label: t("nav.gallery"), href: "#gallery" },
     { label: t("nav.contact"), href: "#contact" },
   ];
 
@@ -33,7 +31,7 @@ export function Header() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-primary shadow-md"
+          ? "bg-[#9B7653]/95 shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -56,7 +54,7 @@ export function Header() {
 
           <div className="hidden items-center gap-3 md:flex ml-auto">
             <Button
-              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8]"
+              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] rounded-full"
               onClick={() =>
                 document
                   .getElementById("events")
@@ -66,7 +64,7 @@ export function Header() {
               {t("nav.event")}
             </Button>
             <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
               onClick={() =>
                 document
                   .getElementById("contact")
@@ -74,14 +72,6 @@ export function Header() {
               }
             >
               {t("nav.book")}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleLanguage}
-              className="h-9"
-            >
-              {language.toUpperCase()}
             </Button>
           </div>
 
@@ -94,13 +84,13 @@ export function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="border-border border-t py-4 md:hidden">
+          <div className="border-primary-foreground/20 border-t bg-[#9B7653]/95 py-4 md:hidden">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-foreground/80 hover:text-primary py-2 transition-colors"
+                  className="text-primary-foreground/80 hover:text-white py-2 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -108,7 +98,7 @@ export function Header() {
               ))}
               <div className="flex items-center gap-3">
                 <Button
-                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1"
+                  className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] flex-1 rounded-full"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     document
@@ -119,7 +109,7 @@ export function Header() {
                   {t("nav.event")}
                 </Button>
                 <Button
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 flex-1"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 flex-1 rounded-full"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     document
@@ -128,14 +118,6 @@ export function Header() {
                   }}
                 >
                   {t("nav.book")}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-16"
-                  onClick={toggleLanguage}
-                >
-                  {language.toUpperCase()}
                 </Button>
               </div>
             </nav>
