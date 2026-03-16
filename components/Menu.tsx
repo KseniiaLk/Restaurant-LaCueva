@@ -119,13 +119,6 @@ export function Menu() {
               {t("menu.badge")}
             </span>
           </div>
-          <h2 className="text-foreground mb-4 font-serif text-4xl md:text-5xl">
-            {t("menu.title.line1")}{" "}
-            <span className="text-primary">{t("menu.title.line2")}</span>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            {t("menu.subtitle")}
-          </p>
         </motion.div>
 
         <motion.div

@@ -1,31 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Clock, Users, Award } from "lucide-react";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "./LanguageProvider";
 
 export function About() {
   const { t } = useLanguage();
-
-  const features = [
-    {
-      icon: Clock,
-      title: t("about.feature.experience.title"),
-      description: t("about.feature.experience.desc"),
-    },
-    {
-      icon: Users,
-      title: t("about.feature.team.title"),
-      description: t("about.feature.team.desc"),
-    },
-    {
-      icon: Award,
-      title: t("about.feature.michelin.title"),
-      description: t("about.feature.michelin.desc"),
-    },
-  ];
 
   return (
     <section id="about" className="bg-background py-20 md:py-32">
@@ -82,33 +63,6 @@ export function About() {
                 {t("about.paragraph2")}
               </p>
             ) : null}
-
-            <div className="mt-8 space-y-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  className="flex items-start gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                >
-                  <div className="bg-transparent flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-primary">
-                    <feature.icon className="text-primary h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-foreground mb-1 text-sm font-semibold uppercase tracking-widest">
-                      {feature.title}
-                    </h4>
-                    {feature.description ? (
-                      <p className="text-muted-foreground text-sm">
-                        {feature.description}
-                      </p>
-                    ) : null}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title.line1": "Where Taste Creates",
     "about.title.line2": "Memories",
     "about.paragraph1":
-      "Grottan La Cueva is not just another restaurant. Here, you are welcomed with genuine passion and a deep love for Scandinavian cuisine — everything prepared from scratch with care, quality, and pride. More than a meal, it’s a personal experience. With warmth, laughter, and heartfelt hospitality, we create a place where you can relax, connect, and simply enjoy. We care for our guests the way we care for our food — wholeheartedly. No matter who you are or where you come from, at Grottan La Cueva you will always feel at home.",
+      "Welcome to our Swedish restaurant Grottan la Cueva. Everything here is made from scratch with care, love and deep respect for the ingredients. We serve Swedish traditional food of the highest quality, rich in flavor and above all with sauces at the center, just as we think it should taste. Warm welcome 💛",
     "about.paragraph2": "",
     "about.feature.experience.title": "Enjoy every bite",
     "about.feature.experience.desc": "",
@@ -47,9 +47,9 @@ const translations: Record<Language, Record<string, string>> = {
     "story.heading.line1": "When laughter and good mood create an unforgettable",
     "story.heading.line2": "memory",
     "story.subtitle.part1":
-      "We’ve been best friends for over ten years and have previously worked together — though in very different industries. What truly connects us is our shared drive to always do things better.\nSo when the opportunity came to create a different, personal, and genuinely fun restaurant in Alicante, we didn’t hesitate. Because great food is never just about what’s on the plate — it’s about warmth, atmosphere, and feeling at home.",
+      "We've been best friends for over ten years and have previously worked together — though in very different industries. What truly connects us is our shared drive to always do things better. So when the opportunity came to create a different, personal, and genuinely fun restaurant in Alicante, we didn't hesitate. Because great food is never just about what's on the plate. It's about warmth, atmosphere, and feeling at home.",
     "story.subtitle.part2":
-      "As passionate food creators, we share a special Scandinavian love for sauces — the kind that elevate classic meat, fish, and even desserts. Everything is prepared from scratch using the highest-quality ingredients. Cutting corners is simply not who we are. And we enjoy every single day — because when flavor and laughter come together, that’s the best recipe of all.",
+      "As passionate food creators, we share a special Scandinavian love for sauces — the kind that elevate classic meat, fish, and desserts. Everything is prepared from scratch using the highest-quality ingredients. We don't cut corners. Because when flavor and laughter come together, that's the best recipe of all.",
     "menu.badge": "Our Menu",
     "menu.title.line1": "Exquisite",
     "menu.title.line2": "Dishes",
@@ -177,7 +177,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title.line1": "Donde el sabor crea",
     "about.title.line2": "Recuerdos",
     "about.paragraph1":
-      "Creemos que la buena comida empieza con el cuidado. Ingredientes locales y frescos y ideas simples y pensadas se unen para crear platos hermosos, llenos de sabor y fáciles de disfrutar, inspirados en la sencillez y el equilibrio escandinavos.",
+      "Bienvenido a nuestro restaurante sueco Grottan la Cueva. Aquí todo se prepara desde cero con cuidado, amor y profundo respeto por los ingredientes. Servimos comida tradicional sueca de la más alta calidad, rica en sabor y sobre todo con salsas en el centro, tal como creemos que debe saber. Bienvenido 💛",
     "about.paragraph2":
       "Cada visita es un momento para bajar el ritmo, disfrutar del ambiente y sentirse cómodo. Un lugar para buen ánimo, buena comida y tiempo bien aprovechado.",
     "about.feature.experience.title": "Disfruta cada bocado",
@@ -190,9 +190,9 @@ const translations: Record<Language, Record<string, string>> = {
     "story.heading.line1": "Cuando la risa y el buen humor crean un recuerdo",
     "story.heading.line2": "inolvidable",
     "story.subtitle.part1":
-      "Hemos sido mejores amigos durante más de diez años y ya hemos trabajado juntos — aunque en industrias muy diferentes. Lo que realmente nos une es nuestro impulso compartido de hacer las cosas cada vez mejor.\nCuando surgió la oportunidad de crear en Alicante un restaurante diferente, personal y genuinamente divertido, no lo dudamos. Porque la gran comida nunca es solo lo que hay en el plato: es calidez, ambiente y sentirse como en casa.",
+      "Hemos sido mejores amigos durante más de diez años y hemos trabajado juntos antes, aunque en industrias muy diferentes. Lo que nos une es nuestra motivación compartida de hacer siempre las cosas mejor. Cuando surgió la oportunidad de crear un restaurante diferente, personal y genuinamente divertido en Alicante, no dudamos. Porque la buena comida nunca es solo lo que hay en el plato. Se trata de calidez, ambiente y sentirse como en casa.",
     "story.subtitle.part2":
-      "Como creadores apasionados de comida, compartimos un amor escandinavo especial por las salsas — las que elevan la carne, el pescado e incluso los postres. Todo se prepara desde cero con ingredientes de la más alta calidad. Cortar esquinas simplemente no va con nosotros.\nY disfrutamos cada día — porque cuando el sabor y la risa se juntan, esa es la mejor receta de todas.",
+      "Como apasionados creadores de comida, compartimos un amor escandinavo especial por las salsas, lo que realza la carne, el pescado y los postres clásicos. Todo se prepara desde cero con ingredientes de la más alta calidad. No se puede hacer trampa con la comida con nosotros, porque cuando el sabor y la risa se encuentran, ahí está la mejor receta.",
     "menu.badge": "Nuestro menú",
     "menu.title.line1": "Platos",
     "menu.title.line2": "Exquisitos",
@@ -321,7 +321,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title.line1": "Där smaken skapar",
     "about.title.line2": "Minnen",
     "about.paragraph1":
-      "Välkommen till vår svenska restaurang. Här lagas allt från grunden — med omsorg, kärlek och djup respekt för råvarorna. Vi serverar svensk mat av högsta kvalitet, rik på smak och tradition. Och framför allt — med såser i centrum, precis som vi tycker det ska vara. Kliv in så berättar vi gärna mer. Varmt välkommen 💛",
+      "Välkommen till vår svenska restaurang Grottan la Cueva. Här lagas allt från grunden med omsorg, kärlek och djup respekt för råvarorna. Vi serverar svensk traditionell mat av högsta kvalitet, rik på smak och framför allt med såser i centrum, precis som vi tycker att det ska smaka. Varmt välkommen 💛",
     "about.paragraph2": "",
     "about.feature.experience.title": "Njut av varje tugga",
     "about.feature.experience.desc": "",
@@ -437,9 +437,9 @@ const translations: Record<Language, Record<string, string>> = {
     "story.heading.line1": "När skratt och gott humör skapar ett oförglömligt",
     "story.heading.line2": "minne",
     "story.subtitle.part1":
-      "Vi har varit bästa vänner i över tio år och har tidigare arbetat tillsammans — om än i helt olika branscher. Det som verkligen förenar oss är vår gemensamma drivkraft att alltid göra saker bättre.\nNär möjligheten kom att skapa en annorlunda, personlig och genuint rolig restaurang i Alicante tvekade vi inte. För riktigt god mat handlar aldrig bara om det som ligger på tallriken — det handlar om värme, stämning och att känna sig hemma.",
+      "Vi har varit bästa vänner i över tio år och har tidigare arbetat tillsammans fast i helt olika branscher. Det som verkligen förenar oss är vår gemensamma drivkraft att alltid göra saker bättre. När möjligheten kom att skapa en annorlunda, personlig och genuint rolig restaurang i Alicante så tvekade vi inte. För riktigt god mat handlar aldrig bara om det som ligger på tallriken. Det handlar om värme, stämning och att känna sig som hemma.",
     "story.subtitle.part2":
-      "Som passionerade mat­skapare delar vi en särskild skandinavisk kärlek till såser — de som lyfter klassiska kött‑, fisk‑ och till och med dessert­rätter. Allt lagas från grunden med råvaror av högsta kvalitet. Att tumma på något är helt enkelt inte vi.\nOch vi njuter av varje dag — för när smak och skratt möts, då har man hittat det allra bästa receptet.",
+      "Som passionerade matskapare delar vi en särskild skandinavisk kärlek till såser, det som lyfter klassiska kött, fisk och desserträtter. Allt lagas från grunden med råvaror av högsta kvalitet. Det går inte att fuska med mat hos oss för när smak och skratt möts, då har man hittat det allra bästa receptet.",
   },
 };
 
