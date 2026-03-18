@@ -69,7 +69,7 @@ export function Menu() {
       name: t("menu.item.food10.name"),
       description: t("menu.item.food10.desc"),
       price: "€24",
-      image: "/Food10.png?v=2",
+      image: "/Food10.JPG?v=3",
       category: "plato-principal",
     },
     {

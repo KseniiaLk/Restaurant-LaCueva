@@ -98,20 +98,19 @@ export function Contact() {
         title: `Event booking - ${eventData.type} on ${eventData.date} at ${eventData.time}`,
       };
 
-      await Promise.all([
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_EVENT_TEMPLATE_ID, params, {
-          publicKey: EMAILJS_PUBLIC_KEY,
-        }),
-        emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_EVENT_TEMPLATE_ID,
-          {
-            ...params,
-            email: RESTAURANT_EMAIL,
-          },
-          { publicKey: EMAILJS_PUBLIC_KEY },
-        ),
-      ]);
+      const sendToRestaurant = (templateId: string, templateParams: typeof params) =>
+        emailjs.send(EMAILJS_SERVICE_ID, templateId, { ...templateParams, email: RESTAURANT_EMAIL }, { publicKey: EMAILJS_PUBLIC_KEY });
+
+      try {
+        await Promise.all([
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_EVENT_TEMPLATE_ID, params, { publicKey: EMAILJS_PUBLIC_KEY }),
+          sendToRestaurant(EMAILJS_EVENT_TEMPLATE_ID, params),
+        ]);
+      } catch (templateError) {
+        const err = templateError as { status?: number; text?: string; message?: string };
+        console.warn("Event template failed, using reservation template:", err?.status ?? err?.text ?? err?.message ?? err);
+        await sendToRestaurant(EMAILJS_TEMPLATE_ID, params);
+      }
 
       toast.success(t("events.toast"));
       setEventData({
@@ -125,12 +124,18 @@ export function Contact() {
         message: "",
       });
     } catch (error) {
-      console.error("EmailJS event error", error);
+      const err = error as { status?: number; text?: string; message?: string };
+      console.error("EmailJS event error:", err?.status ?? err?.text ?? err?.message ?? JSON.stringify(error));
       toast.error(t("events.toastError"));
     }
   };
 
   const whatsappNumber = "34604127064";
+
+  const timeOptions = [
+    "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30",
+    "22:00", "22:30", "23:00", "23:30", "00:00", "00:30", "01:00", "01:30",
+  ];
 
   const contactInfo = [
     {
@@ -257,18 +262,21 @@ export function Contact() {
                     <label className="text-foreground mb-2 block text-sm">
                       {t("contact.form.time")}
                     </label>
-                  <Input
-                    type="time"
-                    value={formData.time}
-                    onChange={(event) =>
-                      setFormData({ ...formData, time: event.target.value })
-                    }
-                    min="18:30"
-                    max="00:30"
-                    step={1800}
-                    required
-                    className="w-full"
-                  />
+                    <select
+                      value={formData.time}
+                      onChange={(event) =>
+                        setFormData({ ...formData, time: event.target.value })
+                      }
+                      required
+                      className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
+                    >
+                      <option value="">—</option>
+                      {timeOptions.map((time) => (
+                        <option key={time} value={time}>
+                          {time}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -376,18 +384,21 @@ export function Contact() {
                     <label className="text-foreground mb-2 block text-sm">
                       {t("events.form.time")}
                     </label>
-                  <Input
-                    type="time"
-                    value={eventData.time}
-                    onChange={(event) =>
-                      setEventData({ ...eventData, time: event.target.value })
-                    }
-                    min="18:30"
-                    max="00:30"
-                    step={1800}
-                    required
-                    className="h-7 w-full text-sm"
-                  />
+                    <select
+                      value={eventData.time}
+                      onChange={(event) =>
+                        setEventData({ ...eventData, time: event.target.value })
+                      }
+                      required
+                      className="bg-input-background border-border focus:ring-ring h-9 w-full rounded-lg border px-3 py-1.5 text-sm focus:outline-none focus:ring-2"
+                    >
+                      <option value="">—</option>
+                      {timeOptions.map((time) => (
+                        <option key={time} value={time}>
+                          {time}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 

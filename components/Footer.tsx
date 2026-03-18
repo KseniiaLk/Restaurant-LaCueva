@@ -16,6 +16,7 @@ export function Footer() {
     ],
     [t("footer.section.services")]: [
       { label: t("footer.link.menu"), href: "#menu" },
+      { label: t("footer.link.gallery"), href: "#gallery" },
       { label: t("footer.link.reservations"), href: "#contact" },
       { label: t("footer.link.events"), href: "#events" },
     ],

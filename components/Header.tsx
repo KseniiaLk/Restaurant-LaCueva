@@ -24,6 +24,7 @@ export function Header() {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.story"), href: "#story" },
     { label: t("nav.menu"), href: "#menu" },
+    { label: t("nav.gallery"), href: "#gallery" },
     { label: t("nav.contact"), href: "#contact" },
   ];
 
