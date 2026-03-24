@@ -31,7 +31,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <div className="-mb-24 flex justify-center">
-            <span className="text-white/80 text-2xl font-light tracking-[0.22em] normal-case md:text-3xl">
+            <span className="text-[#d4af37] text-2xl font-light tracking-[0.22em] normal-case drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] md:text-3xl">
               Grottan
             </span>
           </div>
@@ -41,7 +41,8 @@ export function Hero() {
 
           <h1 className="mt-10 mb-16 text-center">
             <span className="text-white/80 text-2xl font-light tracking-[0.22em] normal-case md:text-3xl">
-              {t("hero.title.line1")} {t("hero.title.line2")}
+              {t("hero.title.line1")}
+              <span className="text-[#d4af37]"> {t("hero.title.line2")}</span>
             </span>
           </h1>
 

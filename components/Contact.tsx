@@ -12,11 +12,17 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useLanguage } from "./LanguageProvider";
 
+const EVENT_TYPE_LABELS_EN: Record<string, string> = {
+  private: "Private dinner",
+  birthday: "Birthday",
+  corporate: "Corporate event",
+};
+
 export function Contact() {
   const { t } = useLanguage();
   const EMAILJS_SERVICE_ID = "service_lwi4o5j";
   const EMAILJS_TEMPLATE_ID = "template_lnb2p0s";
-  const EMAILJS_EVENT_TEMPLATE_ID = "template_nmsn38j";
+  const EMAILJS_EVENT_TEMPLATE_ID = "template_y7gabrp";
   const EMAILJS_PUBLIC_KEY = "ol8m9qtnLYjQWqHvS";
   const RESTAURANT_EMAIL = "lacuevarestlacueva@gmail.com";
   const [formData, setFormData] = React.useState({
@@ -94,7 +100,9 @@ export function Contact() {
         reservation_time: eventData.time,
         guests: eventData.guests,
         event_type: eventData.type,
-        message: eventData.message,
+        event_type_label:
+          EVENT_TYPE_LABELS_EN[eventData.type] ?? eventData.type,
+        message: eventData.message.trim() || "—",
         title: `Event booking - ${eventData.type} on ${eventData.date} at ${eventData.time}`,
       };
 
@@ -176,10 +184,6 @@ export function Contact() {
               {t("contact.badge")}
             </span>
           </div>
-          <h2 className="text-foreground mb-4 font-serif text-4xl md:text-5xl">
-            {t("contact.title.line1")}{" "}
-            <span className="text-primary">{t("contact.title.line2")}</span>
-          </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
             {t("contact.subtitle")}
           </p>
@@ -311,11 +315,11 @@ export function Contact() {
               </form>
             </div>
 
-            <div id="events" className="bg-card mt-6 rounded-2xl p-4 shadow-xl">
-              <h3 className="text-foreground mb-4 font-serif text-xl">
+            <div id="events" className="bg-card mt-6 rounded-2xl p-8 shadow-xl">
+              <h3 className="text-foreground mb-6 font-serif text-2xl md:text-3xl">
                 {t("events.form.title")}
               </h3>
-              <form onSubmit={handleEventSubmit} className="space-y-3">
+              <form onSubmit={handleEventSubmit} className="space-y-6">
                 <div>
                   <label className="text-foreground mb-2 block text-sm">
                     {t("events.form.name")}
@@ -328,7 +332,7 @@ export function Contact() {
                     }
                     placeholder="Juan Pérez"
                     required
-                    className="h-7 w-full text-sm"
+                    className="w-full"
                   />
                 </div>
 
@@ -344,7 +348,7 @@ export function Contact() {
                     }
                     placeholder="name@email.com"
                     required
-                    className="h-7 w-full text-sm"
+                    className="w-full"
                   />
                 </div>
 
@@ -360,7 +364,7 @@ export function Contact() {
                     }
                     placeholder="+34 604 12 70 64"
                     required
-                    className="h-7 w-full text-sm"
+                    className="w-full"
                   />
                 </div>
 
@@ -376,7 +380,7 @@ export function Contact() {
                         setEventData({ ...eventData, date: event.target.value })
                       }
                       required
-                      className="h-7 w-full text-sm"
+                      className="w-full"
                     />
                   </div>
 
@@ -390,7 +394,7 @@ export function Contact() {
                         setEventData({ ...eventData, time: event.target.value })
                       }
                       required
-                      className="bg-input-background border-border focus:ring-ring h-9 w-full rounded-lg border px-3 py-1.5 text-sm focus:outline-none focus:ring-2"
+                      className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
                     >
                       <option value="">—</option>
                       {timeOptions.map((time) => (
@@ -416,7 +420,8 @@ export function Contact() {
                         guests: event.target.value,
                       })
                     }
-                    className="h-7 w-full text-sm"
+                    required
+                    className="w-full"
                   />
                 </div>
 
@@ -429,7 +434,7 @@ export function Contact() {
                     onChange={(event) =>
                       setEventData({ ...eventData, type: event.target.value })
                     }
-                    className="bg-input-background border-border focus:ring-ring h-7 w-full rounded-lg border px-2 py-0.5 text-sm focus:outline-none focus:ring-2"
+                    className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
                   >
                     <option value="private">
                       {t("events.form.type.private")}
@@ -456,7 +461,7 @@ export function Contact() {
                       })
                     }
                     placeholder=""
-                    className="min-h-16 text-sm"
+                    className="min-h-24 w-full text-sm"
                   />
                 </div>
 

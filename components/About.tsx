@@ -39,7 +39,7 @@ export function About() {
                 className="h-[500px] w-full object-cover object-[50%_30%]"
               />
             </div>
-            <div className="bg-secondary/20 absolute -bottom-6 -right-6 h-48 w-48 rounded-2xl -z-10" />
+            <div className="bg-secondary/20 absolute -bottom-6 -right-6 h-44 w-72 rounded-2xl -z-10 md:h-48 md:w-96" />
           </motion.div>
 
           <motion.div

@@ -38,7 +38,7 @@ export function Footer() {
       >
         <div className="mb-12 flex flex-col items-center">
           <a href="#home" className="flex flex-col items-center">
-            <span className="text-primary-foreground/90 mb-2 text-lg font-light tracking-[0.2em] md:text-xl">
+            <span className="mb-2 text-lg font-light tracking-[0.2em] text-[#d4af37] drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)] md:text-xl">
               Grottan
             </span>
             <div className="flex items-center justify-center gap-4 md:gap-6">

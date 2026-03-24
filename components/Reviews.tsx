@@ -1,29 +1,32 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ExternalLink, Star } from "lucide-react";
 
 import { useLanguage } from "./LanguageProvider";
 
+type ReviewCard = {
+  id: "james" | "guest" | "josiane";
+  mapsUrl: string;
+};
+
+const REVIEW_CARDS: ReviewCard[] = [
+  {
+    id: "james",
+    mapsUrl: "https://maps.app.goo.gl/8gtgPorBWULCPcs46",
+  },
+  {
+    id: "guest",
+    mapsUrl: "https://maps.app.goo.gl/3TQ7FU899MApe3H49",
+  },
+  {
+    id: "josiane",
+    mapsUrl: "https://maps.app.goo.gl/cwiAC9GDyEtD3rvB7",
+  },
+];
+
 export function Reviews() {
   const { t } = useLanguage();
-
-  const reviews = [
-    {
-      name: "Sofia R.",
-      rating: "5/5",
-      text: "Excellent food and a calm, cozy atmosphere. We felt very welcome.",
-    },
-    {
-      name: "Daniel M.",
-      rating: "5/5",
-      text: "Beautiful presentation and rich flavors. A perfect evening.",
-    },
-    {
-      name: "Elena P.",
-      rating: "5/5",
-      text: "Great service and truly memorable dishes. We will be back.",
-    },
-  ];
 
   return (
     <section id="reviews" className="bg-background py-20 md:py-32">
@@ -44,22 +47,47 @@ export function Reviews() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {reviews.map((review, index) => (
+          {REVIEW_CARDS.map((review, index) => (
             <motion.div
-              key={review.name}
-              className="bg-card rounded-2xl p-6 shadow-lg"
+              key={review.id}
+              className="bg-card flex flex-col rounded-2xl p-6 shadow-lg"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <div className="mb-2 flex items-center justify-between">
-                <h3 className="text-foreground font-medium">{review.name}</h3>
-                <span className="text-primary text-sm font-medium">
-                  {review.rating}
-                </span>
+              <div className="mb-3 flex items-start justify-between gap-3">
+                <h3 className="text-foreground min-w-0 font-medium">
+                  {t(`reviews.author.${review.id}`)}
+                </h3>
+                <div
+                  className="flex shrink-0 gap-0.5"
+                  role="img"
+                  aria-label={t("reviews.starsAria")}
+                >
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <Star
+                      key={i}
+                      className="size-[18px] text-[#d4af37]"
+                      fill="currentColor"
+                      stroke="none"
+                      aria-hidden
+                    />
+                  ))}
+                </div>
               </div>
-              <p className="text-muted-foreground text-sm">{review.text}</p>
+              <p className="text-muted-foreground mb-4 grow whitespace-pre-line text-sm leading-relaxed">
+                {t(`reviews.quote.${review.id}`)}
+              </p>
+              <a
+                href={review.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/85 inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 transition-colors hover:underline"
+              >
+                {t("reviews.viewThisReview")}
+                <ExternalLink className="size-3.5 shrink-0 opacity-80" aria-hidden />
+              </a>
             </motion.div>
           ))}
         </div>

@@ -28,11 +28,15 @@ export function Header() {
     { label: t("nav.contact"), href: "#contact" },
   ];
 
+  const navLinkClass = isScrolled
+    ? "text-[#3d2b1f]/80 hover:text-[#2c1810]"
+    : "text-white/90 hover:text-white";
+
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#9B7653]/95 shadow-md"
+          ? "border-b border-[#2c1810]/[0.06] bg-[#f7f2eb]/95 shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -45,7 +49,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-white/90 hover:text-white group relative transition-colors"
+                className={`${navLinkClass} group relative transition-colors`}
               >
                 {item.label}
                 <span className="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all group-hover:w-full" />
@@ -77,21 +81,23 @@ export function Header() {
           </div>
 
           <button
-            className="text-foreground md:hidden"
+            className={`md:hidden ${isScrolled ? "text-[#2c1810]" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="border-primary-foreground/20 border-t bg-[#9B7653]/95 py-4 md:hidden">
+          <div className="border-t border-[#2c1810]/[0.08] bg-[#f7f2eb]/98 py-4 backdrop-blur-md md:hidden">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-primary-foreground/80 hover:text-white py-2 transition-colors"
+                  className="text-[#3d2b1f]/85 hover:text-[#2c1810] py-2 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
