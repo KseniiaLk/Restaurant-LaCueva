@@ -328,8 +328,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Boka bord",
     "nav.event": "Boka event",
     "hero.badge": "Fine dining‑upplevelse",
-    "hero.title.line1": "När skratt och gott humör skapar ett oförglömligt",
-    "hero.title.line2": "minne",
+    "hero.title.line1": "När god smak möter",
+    "hero.title.line2": "glädje",
     "hero.subtitle":
       "Upplev kulinarisk excellens i en elegant atmosfär",
     "hero.cta.menu": "Se meny",
