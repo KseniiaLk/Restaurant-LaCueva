@@ -14,21 +14,21 @@ export function Menu() {
 
   const menuItems = [
     {
-      id: "salmon-2",
-      name: t("menu.item.foto7.name"),
-      description: t("menu.item.foto7.desc"),
-      price: "€11",
-      priceNote: "½ €7",
-      image: "/Food7.png?v=2",
-      category: "entradas",
-    },
-    {
       id: "chocolate-2",
       name: t("menu.item.foto8.name"),
       description: t("menu.item.foto8.desc"),
       price: "€11",
       priceNote: "½ €7",
       image: "/Food8.png?v=2",
+      category: "entradas",
+    },
+    {
+      id: "salmon-2",
+      name: t("menu.item.foto7.name"),
+      description: t("menu.item.foto7.desc"),
+      price: "€11",
+      priceNote: "½ €7",
+      image: "/Food7.png?v=2",
       category: "entradas",
     },
     {

@@ -145,29 +145,32 @@ export function Contact() {
     "22:00", "22:30", "23:00", "23:30", "00:00", "00:30", "01:00", "01:30",
   ];
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Address",
-      content: "Calle Artilleros 3 03002 Alicante, Spain",
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "+34 604 12 70 64",
-      whatsapp: true,
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      content: "Lacueva708@gmail.com",
-    },
-    {
-      icon: Clock,
-      title: "Hours",
-      content: "Mon-Sun: 18:00 - 01:30",
-    },
-  ];
+  const contactInfo = React.useMemo(
+    () => [
+      {
+        icon: MapPin,
+        title: t("contact.info.address.title"),
+        content: t("contact.info.address.content"),
+      },
+      {
+        icon: Phone,
+        title: t("contact.info.phone.title"),
+        content: t("contact.info.phone.content"),
+        whatsapp: true as const,
+      },
+      {
+        icon: Mail,
+        title: t("contact.info.email.title"),
+        content: t("contact.info.email.content"),
+      },
+      {
+        icon: Clock,
+        title: t("contact.info.hours.title"),
+        content: t("contact.info.hours.content"),
+      },
+    ],
+    [t],
+  );
 
   return (
     <section id="contact" className="bg-muted/30 py-20 md:py-32">
@@ -499,7 +502,7 @@ export function Contact() {
                     <h4 className="text-foreground mb-1 font-medium">
                       {item.title}
                     </h4>
-                    <p className="text-muted-foreground flex items-center gap-2">
+                    <p className="text-muted-foreground flex items-center gap-2 whitespace-pre-line">
                       {item.content}
                       {"whatsapp" in item && item.whatsapp && (
                         <a

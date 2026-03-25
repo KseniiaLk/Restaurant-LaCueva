@@ -146,7 +146,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.email.title": "Email",
     "contact.info.email.content": "Lacueva708@gmail.com",
     "contact.info.hours.title": "Hours",
-    "contact.info.hours.content": "Mon-Sun: 18:00 - 01:30",
+    "contact.info.hours.content":
+      "Mon–Fri: 18:00–01:30\nSat–Sun: 14:00–01:30",
     "contact.map": "Location Map",
     "footer.tagline": "Enjoy good food, right in the city",
     "footer.section.about": "About",
@@ -299,7 +300,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.email.title": "Correo",
     "contact.info.email.content": "Lacueva708@gmail.com",
     "contact.info.hours.title": "Horario",
-    "contact.info.hours.content": "Lun-Dom: 18:00 - 01:30",
+    "contact.info.hours.content":
+      "Lun–vie: 18:00–01:30\nSáb–dom: 14:00–01:30",
     "contact.map": "Mapa de ubicación",
     "footer.tagline": "Disfruta buena comida, justo en la ciudad",
     "footer.section.about": "Sobre",
@@ -361,14 +363,14 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.signature": "Signatur",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravad lax med dillstuvad potatis",
-    "menu.item.food9.name": "Köttbullar med enbär och gräddsås",
+    "menu.item.food9.name": "Köttbullar med gräddsås",
     "menu.item.food9.desc":
-      "Hemlagade köttbullar med enbärsgräddsås,\nlingon och potatismos",
-    "menu.item.food10.name": "Smakprovstallrik",
+      "Hemlagade köttbullar med gräddsås,\nlingon och potatismos",
+    "menu.item.food10.name": "Smakprovs tallrik",
     "menu.item.food10.desc": "Tapas av förrätter och olika varma rätter med såser",
     "menu.item.pasta.name": "Skaldjurspasta",
     "menu.item.pasta.desc": "Hemlagad pasta med räkor, musslor och bläckfisk",
-    "menu.item.foto2.name": "Lammfärsjärpar",
+    "menu.item.foto2.name": "Lammfärs järpar",
     "menu.item.foto2.desc":
       "Lammfärs järpar fyllda med feta och klyftpotatis och tzatziki",
     "menu.item.foto6.name": "Hjortron med mandelkaka",
@@ -444,7 +446,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.email.title": "E‑post",
     "contact.info.email.content": "Lacueva708@gmail.com",
     "contact.info.hours.title": "Öppettider",
-    "contact.info.hours.content": "Mån–Sön: 18:00 – 01:30",
+    "contact.info.hours.content":
+      "Måndag–fredag: 18:00–01:30\nLördag–söndag: 14:00–01:30",
     "contact.map": "Karta",
     "footer.tagline": "Njut av god mat, mitt i stan",
     "footer.section.about": "Om oss",

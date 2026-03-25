@@ -20,7 +20,26 @@ export function RestaurantJsonLd() {
     },
     servesCuisine: ["Scandinavian", "Swedish", "European"],
     priceRange: "$$",
-    openingHours: "Mo-Su 18:00-01:30",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "18:00",
+        closes: "01:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday", "Sunday"],
+        opens: "14:00",
+        closes: "01:30",
+      },
+    ],
   };
 
   return (
