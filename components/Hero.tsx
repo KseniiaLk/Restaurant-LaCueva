@@ -30,13 +30,15 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="-mb-24 flex justify-center">
-            <span className="text-[#d4af37] text-2xl font-light tracking-[0.22em] normal-case drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] md:text-3xl">
-              Grottan
-            </span>
-          </div>
-          <div className="-mb-8 flex justify-center">
-            <Logo className="h-[24rem] w-auto md:h-[32rem]" />
+          <div className="mt-40 flex flex-col items-center md:mt-52 lg:mt-64">
+            <div className="-mb-24 flex justify-center">
+              <span className="text-[#d4af37] text-2xl font-light tracking-[0.22em] normal-case drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] md:text-3xl">
+                Grottan
+              </span>
+            </div>
+            <div className="-mb-8 flex justify-center">
+              <Logo className="h-[24rem] w-auto md:h-[32rem]" />
+            </div>
           </div>
 
           <h1 className="mt-10 mb-16 text-center">
