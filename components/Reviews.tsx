@@ -6,7 +6,7 @@ import { ExternalLink, Star } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 
 type ReviewCard = {
-  id: "james" | "guest" | "josiane";
+  id: "james" | "guest" | "urszula";
   mapsUrl: string;
 };
 
@@ -20,8 +20,8 @@ const REVIEW_CARDS: ReviewCard[] = [
     mapsUrl: "https://maps.app.goo.gl/3TQ7FU899MApe3H49",
   },
   {
-    id: "josiane",
-    mapsUrl: "https://maps.app.goo.gl/cwiAC9GDyEtD3rvB7",
+    id: "urszula",
+    mapsUrl: "https://maps.app.goo.gl/5Sz2SAKZxWSgXiLW6",
   },
 ];
 

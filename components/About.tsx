@@ -49,11 +49,6 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
             className="mt-6"
           >
-            <h2 className="text-foreground mb-6 font-cormorant text-4xl md:text-5xl font-semibold leading-tight">
-              {t("about.title.line1")}
-              <span className="text-primary"> {t("about.title.line2")}</span>
-            </h2>
-
             <p className="text-foreground/90 mb-6 text-base md:text-lg leading-relaxed">
               {t("about.paragraph1")}
             </p>

@@ -84,7 +84,7 @@ export function Footer() {
         <div className="border-primary-foreground/20 border-t pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <p className="text-primary-foreground/70 text-sm">
-              © {currentYear} La Cueva. {t("footer.rights")}
+              © {currentYear} Grottan La Cueva. {t("footer.rights")}
             </p>
             <div className="flex space-x-6 text-sm">
               <a

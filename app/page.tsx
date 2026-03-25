@@ -7,6 +7,7 @@ import { Gallery } from "@/components/Gallery";
 import { Reviews } from "@/components/Reviews";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Reviews />
       <Contact />
       <Footer />
+      <ScrollToTop />
       <Toaster position="top-center" />
     </div>
   );

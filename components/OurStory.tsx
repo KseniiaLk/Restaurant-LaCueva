@@ -18,39 +18,35 @@ export function OurStory() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="mb-6 inline-block rounded-full border border-primary/30 px-4 py-2">
+          <div className="mb-8 inline-block rounded-full border border-primary/30 px-4 py-2">
             <span className="text-primary text-sm tracking-widest uppercase">
               {t("story.title")}
             </span>
           </div>
-          <h2 className="text-foreground mb-8 font-cormorant text-4xl font-semibold leading-tight md:text-5xl">
-            {t("story.heading.line1")}
-            <span className="text-primary"> {t("story.heading.line2")}</span>
-          </h2>
-          <div className="mt-8 grid grid-cols-1 items-start gap-8 text-left md:grid-cols-2">
+          <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-8 text-left">
             <motion.div
-              className="text-foreground/90 space-y-6 text-base md:text-lg leading-relaxed"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <p className="whitespace-pre-line">{t("story.subtitle.part1")}</p>
-              {t("story.subtitle.part2") ? (
-                <p className="whitespace-pre-line">{t("story.subtitle.part2")}</p>
-              ) : null}
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <ImageWithFallback
                 src="/story.jpg"
                 alt="Our Story"
-                className="h-full max-h-[420px] w-full rounded-2xl object-cover"
+                className="max-h-[min(420px,55vh)] w-full rounded-2xl object-cover"
               />
+            </motion.div>
+            <motion.div
+              className="text-foreground/90 space-y-6 text-base md:text-lg leading-relaxed"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <p className="whitespace-pre-line">{t("story.subtitle.part1")}</p>
+              {t("story.subtitle.part2") ? (
+                <p className="whitespace-pre-line">{t("story.subtitle.part2")}</p>
+              ) : null}
             </motion.div>
           </div>
         </motion.div>

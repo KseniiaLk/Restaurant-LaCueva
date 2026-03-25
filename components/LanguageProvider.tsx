@@ -32,8 +32,6 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cta.about": "Learn More",
     "about.badge": "About Us",
     "about.story": "Our Story",
-    "about.title.line1": "Authentic Swedish flavors,",
-    "about.title.line2": "right here in Alicante",
     "about.paragraph1":
       "Welcome to our Swedish restaurant Grottan la Cueva. Everything here is made from scratch with care, love and deep respect for the ingredients. We serve Swedish traditional food of the highest quality, rich in flavor and above all with sauces at the center, just as we think it should taste. Warm welcome 💛",
     "about.paragraph2": "",
@@ -44,8 +42,6 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Quality without pretension",
     "about.feature.michelin.desc": "",
     "story.title": "Our Story",
-    "story.heading.line1": "From our family",
-    "story.heading.line2": "to your table",
     "story.subtitle.part1":
       "We've been best friends for over ten years and have previously worked together — though in very different industries. What truly connects us is our shared drive to always do things better. So when the opportunity came to create a different, personal, and genuinely fun restaurant in Alicante, we didn't hesitate. Because great food is never just about what's on the plate. It's about warmth, atmosphere, and feeling at home.",
     "story.subtitle.part2":
@@ -100,13 +96,13 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.starsAria": "5 out of 5 stars",
     "reviews.author.james": "James M.",
     "reviews.author.guest": "Hana Cimperman",
-    "reviews.author.josiane": "Josiane Cullis",
+    "reviews.author.urszula": "Urszula",
     "reviews.quote.guest":
       "The hosts are absolutely amazing! They have such a warm and hospitable energy. They welcomed us with some of their traditional Swedish dishes, and afterwards we enjoyed classic karaoke with ABBA. We're definitely looking forward to visiting again! ☺️",
     "reviews.quote.james":
       "Fantastic restaurant/wine bar right in the centre of Alicante, came here multiple times during our stay here. Such a relaxed atmosphere complimented by very welcoming entertaining hosts. Dined here on our final night and it was amazing.. traditional tasty Swedish food and plenty of wine. Would definitely recommend to anyone in the area!",
-    "reviews.quote.josiane":
-      "Best Swedish tapas!\nThe owner Robert is so dedicated to the quality and origin of the food. We highly recommend this place! We were delighted with the food! His good friend Jasper was so friendly and helpful. We spent a great evening!",
+    "reviews.quote.urszula":
+      "The best bar in Alicante, delicious food and drinks at reasonable prices. The atmosphere is wonderful — you don't want to leave the place, such lovely people spreading positive energy. Highly recommended and we'll definitely be back here 🫶🏼🙌",
     "gallery.badge": "Gallery",
     "gallery.title.line1": "Take a look at",
     "gallery.title.line2": "our world",
@@ -166,6 +162,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.link.privacy": "Privacy Policy",
     "footer.link.terms": "Terms of Service",
     "footer.rights": "All rights reserved.",
+    "ui.scrollToTop": "Back to top",
+    "ui.languageToggle": "Change language",
   },
   es: {
     "nav.home": "Inicio",
@@ -185,8 +183,6 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cta.about": "Saber más",
     "about.badge": "Sobre nosotros",
     "about.story": "Nuestra historia",
-    "about.title.line1": "Sabores suecos auténticos,",
-    "about.title.line2": "aquí en Alicante",
     "about.paragraph1":
       "Bienvenido a nuestro restaurante sueco Grottan la Cueva. Aquí todo se prepara desde cero con cuidado, amor y profundo respeto por los ingredientes. Servimos comida tradicional sueca de la más alta calidad, rica en sabor y sobre todo con salsas en el centro, tal como creemos que debe saber. Bienvenido 💛",
     "about.paragraph2":
@@ -198,8 +194,6 @@ const translations: Record<Language, Record<string, string>> = {
     "about.feature.michelin.title": "Calidad sin pretensiones",
     "about.feature.michelin.desc": "",
     "story.title": "Nuestra historia",
-    "story.heading.line1": "De nuestra familia",
-    "story.heading.line2": "a tu mesa",
     "story.subtitle.part1":
       "Hemos sido mejores amigos durante más de diez años y hemos trabajado juntos antes, aunque en industrias muy diferentes. Lo que nos une es nuestra motivación compartida de hacer siempre las cosas mejor. Cuando surgió la oportunidad de crear un restaurante diferente, personal y genuinamente divertido en Alicante, no dudamos. Porque la buena comida nunca es solo lo que hay en el plato. Se trata de calidez, ambiente y sentirse como en casa.",
     "story.subtitle.part2":
@@ -255,13 +249,13 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.starsAria": "5 de 5 estrellas",
     "reviews.author.james": "James M.",
     "reviews.author.guest": "Hana Cimperman",
-    "reviews.author.josiane": "Josiane Cullis",
+    "reviews.author.urszula": "Urszula",
     "reviews.quote.guest":
       "The hosts are absolutely amazing! They have such a warm and hospitable energy. They welcomed us with some of their traditional Swedish dishes, and afterwards we enjoyed classic karaoke with ABBA. We're definitely looking forward to visiting again! ☺️",
     "reviews.quote.james":
       "Fantastic restaurant/wine bar right in the centre of Alicante, came here multiple times during our stay here. Such a relaxed atmosphere complimented by very welcoming entertaining hosts. Dined here on our final night and it was amazing.. traditional tasty Swedish food and plenty of wine. Would definitely recommend to anyone in the area!",
-    "reviews.quote.josiane":
-      "Best Swedish tapas!\nThe owner Robert is so dedicated to the quality and origin of the food. We highly recommend this place! We were delighted with the food! His good friend Jasper was so friendly and helpful. We spent a great evening!",
+    "reviews.quote.urszula":
+      "The best bar in Alicante, delicious food and drinks at reasonable prices. The atmosphere is wonderful — you don't want to leave the place, such lovely people spreading positive energy. Highly recommended and we'll definitely be back here 🫶🏼🙌",
     "gallery.badge": "Galería",
     "gallery.title.line1": "Echa un vistazo a",
     "gallery.title.line2": "nuestro mundo",
@@ -321,6 +315,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.link.privacy": "Política de privacidad",
     "footer.link.terms": "Términos de servicio",
     "footer.rights": "Todos los derechos reservados.",
+    "ui.scrollToTop": "Volver arriba",
+    "ui.languageToggle": "Cambiar idioma",
   },
   sv: {
     "nav.home": "Hem",
@@ -340,8 +336,6 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cta.about": "Läs mer",
     "about.badge": "Om oss",
     "about.story": "Vår historia",
-    "about.title.line1": "Äkta svenska smaker,",
-    "about.title.line2": "här i Alicante",
     "about.paragraph1":
       "Välkommen till vår svenska restaurang Grottan la Cueva. Här lagas allt från grunden med omsorg, kärlek och djup respekt för råvarorna. Vi serverar svensk traditionell mat av högsta kvalitet, rik på smak och framför allt med såser i centrum, precis som vi tycker att det ska smaka. Varmt välkommen 💛",
     "about.paragraph2": "",
@@ -400,13 +394,13 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.starsAria": "5 av 5 stjärnor",
     "reviews.author.james": "James M.",
     "reviews.author.guest": "Hana Cimperman",
-    "reviews.author.josiane": "Josiane Cullis",
+    "reviews.author.urszula": "Urszula",
     "reviews.quote.guest":
       "The hosts are absolutely amazing! They have such a warm and hospitable energy. They welcomed us with some of their traditional Swedish dishes, and afterwards we enjoyed classic karaoke with ABBA. We're definitely looking forward to visiting again! ☺️",
     "reviews.quote.james":
       "Fantastic restaurant/wine bar right in the centre of Alicante, came here multiple times during our stay here. Such a relaxed atmosphere complimented by very welcoming entertaining hosts. Dined here on our final night and it was amazing.. traditional tasty Swedish food and plenty of wine. Would definitely recommend to anyone in the area!",
-    "reviews.quote.josiane":
-      "Best Swedish tapas!\nThe owner Robert is so dedicated to the quality and origin of the food. We highly recommend this place! We were delighted with the food! His good friend Jasper was so friendly and helpful. We spent a great evening!",
+    "reviews.quote.urszula":
+      "The best bar in Alicante, delicious food and drinks at reasonable prices. The atmosphere is wonderful — you don't want to leave the place, such lovely people spreading positive energy. Highly recommended and we'll definitely be back here 🫶🏼🙌",
     "gallery.badge": "Galleri",
     "gallery.title.line1": "Ta en titt på",
     "gallery.title.line2": "vår värld",
@@ -466,9 +460,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.link.privacy": "Integritetspolicy",
     "footer.link.terms": "Användarvillkor",
     "footer.rights": "Alla rättigheter förbehållna.",
+    "ui.scrollToTop": "Till toppen",
+    "ui.languageToggle": "Byt språk",
     "story.title": "Vår historia",
-    "story.heading.line1": "Från vår familj",
-    "story.heading.line2": "till ditt bord",
     "story.subtitle.part1":
       "Vi har varit bästa vänner i över tio år och har tidigare arbetat tillsammans fast i helt olika branscher. Det som verkligen förenar oss är vår gemensamma drivkraft att alltid göra saker bättre. När möjligheten kom att skapa en annorlunda, personlig och genuint rolig restaurang i Alicante så tvekade vi inte. För riktigt god mat handlar aldrig bara om det som ligger på tallriken. Det handlar om värme, stämning och att känna sig som hemma.",
     "story.subtitle.part2":

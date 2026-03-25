@@ -9,7 +9,7 @@ import { useLanguage } from "./LanguageProvider";
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const { t } = useLanguage();
+  const { t, language, toggleLanguage } = useLanguage();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -57,37 +57,59 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 md:flex ml-auto">
+          <div className="ml-auto flex items-center gap-2 md:gap-3">
             <Button
-              className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] rounded-full"
-              onClick={() =>
-                document
-                  .getElementById("events")
-                  ?.scrollIntoView({ behavior: "smooth" })
+              variant="outline"
+              size="sm"
+              type="button"
+              onClick={toggleLanguage}
+              className={
+                isScrolled
+                  ? "h-9 w-9 shrink-0 rounded-lg border-[#2c1810]/35 p-0 text-[#2c1810] hover:bg-[#2c1810]/10"
+                  : "h-9 w-9 shrink-0 rounded-lg border-white/55 p-0 text-white hover:bg-white/15"
               }
+              aria-label={t("ui.languageToggle")}
             >
-              {t("nav.event")}
+              <span className="text-xl leading-none" aria-hidden>
+                {language === "en" && "🇬🇧"}
+                {language === "es" && "🇪🇸"}
+                {language === "sv" && "🇸🇪"}
+              </span>
             </Button>
-            <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              {t("nav.book")}
-            </Button>
-          </div>
 
-          <button
-            className={`md:hidden ${isScrolled ? "text-[#2c1810]" : "text-white"}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <div className="hidden items-center gap-3 md:flex">
+              <Button
+                className="bg-[#E8DFD5] text-[#2C1810] hover:bg-[#E2D6C8] rounded-full"
+                onClick={() =>
+                  document
+                    .getElementById("events")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                {t("nav.event")}
+              </Button>
+              <Button
+                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                {t("nav.book")}
+              </Button>
+            </div>
+
+            <button
+              type="button"
+              className={`md:hidden ${isScrolled ? "text-[#2c1810]" : "text-white"}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {isMobileMenuOpen && (
