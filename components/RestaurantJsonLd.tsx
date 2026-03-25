@@ -7,7 +7,7 @@ export function RestaurantJsonLd() {
     "@type": "Restaurant",
     name: "Grottan La Cueva",
     alternateName: ["La Cueva", "Grottan"],
-    image: `${base}/main.png`,
+    image: `${base}/main.jpg`,
     url: base,
     telephone: "+34604127064",
     email: "lacuevarestlacueva@gmail.com",

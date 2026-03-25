@@ -17,7 +17,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="/main.png"
+          src="/main.jpg"
           alt="Restaurant interior"
           className="h-full w-full object-cover"
         />

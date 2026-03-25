@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/main.png",
+        url: "/main.jpg",
         width: 1200,
         height: 630,
         alt: "Grottan La Cueva restaurant interior",

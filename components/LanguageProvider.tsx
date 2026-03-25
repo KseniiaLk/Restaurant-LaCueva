@@ -381,7 +381,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.foto7.name": "Gravlaxtoast",
     "menu.item.foto7.desc": "Gravlaxtoast med hovmästarsås",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen portion",
+    "menu.item.foto8.desc": "Toast Skagen med nordiska räkor",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare med potatispuré, lingon, ärtor och brynt smör",
