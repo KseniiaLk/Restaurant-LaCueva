@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.foto7.name": "Gravlaxtoast",
     "menu.item.foto7.desc": "Gravlaxtoast with mustard-dill sauce",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen portion",
+    "menu.item.foto8.desc": "Toast Skagen with Nordic prawns",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare with mashed potatoes, lingonberries, peas, and browned butter",
@@ -235,7 +235,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.foto7.name": "Gravlaxtoast",
     "menu.item.foto7.desc": "Gravlaxtoast con salsa de mostaza y eneldo",
     "menu.item.foto8.name": "Skagen",
-    "menu.item.foto8.desc": "Toast Skagen (porción)",
+    "menu.item.foto8.desc": "Toast Skagen con gambas nórdicas",
     "menu.item.foto3.name": "Wallenbergare",
     "menu.item.foto3.desc":
       "Wallenbergare con puré de patata, arándanos rojos, guisantes y mantequilla avellanada",
