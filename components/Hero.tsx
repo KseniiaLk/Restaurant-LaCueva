@@ -17,7 +17,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="/main.jpg"
+          src="/MAIN.png"
           alt="Restaurant interior"
           className="h-full w-full object-cover"
         />
@@ -30,7 +30,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mt-40 flex flex-col items-center md:mt-52 lg:mt-64">
+          <div className="mt-4 flex flex-col items-center md:mt-6 lg:mt-8">
             <div className="-mb-24 flex justify-center">
               <span className="text-[#d4af37] text-2xl font-light tracking-[0.22em] normal-case drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] md:text-3xl">
                 Grottan
@@ -41,7 +41,7 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className="mt-10 mb-16 text-center">
+          <h1 className="mt-2 mb-16 text-center md:mt-3">
             <span className="text-white/80 text-2xl font-light tracking-[0.22em] normal-case md:text-3xl">
               {t("hero.title.line1")}
               <span className="text-[#d4af37]"> {t("hero.title.line2")}</span>

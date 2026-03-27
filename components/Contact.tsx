@@ -12,12 +12,6 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useLanguage } from "./LanguageProvider";
 
-const EVENT_TYPE_LABELS_EN: Record<string, string> = {
-  private: "Private dinner",
-  birthday: "Birthday",
-  corporate: "Corporate event",
-};
-
 export function Contact() {
   const { t } = useLanguage();
   const EMAILJS_SERVICE_ID = "service_lwi4o5j";
@@ -31,7 +25,7 @@ export function Contact() {
     phone: "",
     date: "",
     time: "",
-    guests: "2",
+    guests: "",
   });
   const [eventData, setEventData] = React.useState({
     name: "",
@@ -39,7 +33,7 @@ export function Contact() {
     phone: "",
     date: "",
     time: "",
-    guests: "10",
+    guests: "",
     type: "private",
     message: "",
   });
@@ -80,7 +74,7 @@ export function Contact() {
         phone: "",
         date: "",
         time: "",
-        guests: "2",
+        guests: "",
       });
     } catch (error) {
       console.error("EmailJS reservation error", error);
@@ -100,9 +94,9 @@ export function Contact() {
         reservation_time: eventData.time,
         guests: eventData.guests,
         event_type: eventData.type,
-        event_type_label:
-          EVENT_TYPE_LABELS_EN[eventData.type] ?? eventData.type,
-        message: eventData.message.trim() || "—",
+        event_type_label: t(`events.form.type.${eventData.type}`),
+        message:
+          eventData.message.trim() || t("events.form.messageEmpty"),
         title: `Event booking - ${eventData.type} on ${eventData.date} at ${eventData.time}`,
       };
 
@@ -127,7 +121,7 @@ export function Contact() {
         phone: "",
         date: "",
         time: "",
-        guests: "10",
+        guests: "",
         type: "private",
         message: "",
       });
@@ -211,9 +205,9 @@ export function Contact() {
                     onChange={(event) =>
                       setFormData({ ...formData, name: event.target.value })
                     }
-                    placeholder="Juan Pérez"
                     required
-                    className="w-full"
+                    autoComplete="name"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -227,9 +221,9 @@ export function Contact() {
                     onChange={(event) =>
                       setFormData({ ...formData, email: event.target.value })
                     }
-                    placeholder="name@email.com"
                     required
-                    className="w-full"
+                    autoComplete="email"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -243,9 +237,9 @@ export function Contact() {
                     onChange={(event) =>
                       setFormData({ ...formData, phone: event.target.value })
                     }
-                    placeholder="+34 604 12 70 64"
                     required
-                    className="w-full"
+                    autoComplete="tel"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -261,7 +255,7 @@ export function Contact() {
                         setFormData({ ...formData, date: event.target.value })
                       }
                       required
-                      className="w-full"
+                      className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                     />
                   </div>
 
@@ -275,9 +269,11 @@ export function Contact() {
                         setFormData({ ...formData, time: event.target.value })
                       }
                       required
-                      className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
+                      className="border-border/80 bg-background focus:border-primary/50 min-h-11 w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
                     >
-                      <option value="">—</option>
+                      <option value="" disabled>
+                        {t("contact.form.selectPlaceholder")}
+                      </option>
                       {timeOptions.map((time) => (
                         <option key={time} value={time}>
                           {time}
@@ -296,8 +292,12 @@ export function Contact() {
                     onChange={(event) =>
                       setFormData({ ...formData, guests: event.target.value })
                     }
-                    className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
+                    required
+                    className="border-border/80 bg-background focus:border-primary/50 min-h-11 w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
+                    <option value="" disabled>
+                      {t("contact.form.selectPlaceholder")}
+                    </option>
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                       <option key={num} value={num}>
                         {num}{" "}
@@ -333,9 +333,9 @@ export function Contact() {
                     onChange={(event) =>
                       setEventData({ ...eventData, name: event.target.value })
                     }
-                    placeholder="Juan Pérez"
                     required
-                    className="w-full"
+                    autoComplete="name"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -349,9 +349,9 @@ export function Contact() {
                     onChange={(event) =>
                       setEventData({ ...eventData, email: event.target.value })
                     }
-                    placeholder="name@email.com"
                     required
-                    className="w-full"
+                    autoComplete="email"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -365,9 +365,9 @@ export function Contact() {
                     onChange={(event) =>
                       setEventData({ ...eventData, phone: event.target.value })
                     }
-                    placeholder="+34 604 12 70 64"
                     required
-                    className="w-full"
+                    autoComplete="tel"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -383,7 +383,7 @@ export function Contact() {
                         setEventData({ ...eventData, date: event.target.value })
                       }
                       required
-                      className="w-full"
+                      className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                     />
                   </div>
 
@@ -397,9 +397,11 @@ export function Contact() {
                         setEventData({ ...eventData, time: event.target.value })
                       }
                       required
-                      className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
+                      className="border-border/80 bg-background focus:border-primary/50 min-h-11 w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
                     >
-                      <option value="">—</option>
+                      <option value="" disabled>
+                        {t("contact.form.selectPlaceholder")}
+                      </option>
                       {timeOptions.map((time) => (
                         <option key={time} value={time}>
                           {time}
@@ -424,7 +426,7 @@ export function Contact() {
                       })
                     }
                     required
-                    className="w-full"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
 
@@ -437,7 +439,7 @@ export function Contact() {
                     onChange={(event) =>
                       setEventData({ ...eventData, type: event.target.value })
                     }
-                    className="bg-input-background border-border focus:ring-ring w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2"
+                    className="border-border/80 bg-background focus:border-primary/50 min-h-11 w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <option value="private">
                       {t("events.form.type.private")}
@@ -463,8 +465,7 @@ export function Contact() {
                         message: event.target.value,
                       })
                     }
-                    placeholder=""
-                    className="min-h-24 w-full text-sm"
+                    className="border-border/80 bg-background focus-visible:border-primary/50 min-h-28 w-full resize-y px-4 py-3 text-sm"
                   />
                 </div>
 
