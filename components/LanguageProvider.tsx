@@ -487,18 +487,8 @@ const getTranslation = (language: Language, key: string) => {
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  /** English is always the default when the page loads (no persisted override). */
   const [language, setLanguage] = React.useState<Language>("en");
-
-  React.useEffect(() => {
-    const saved = window.localStorage.getItem("language");
-    if (saved === "en" || saved === "es" || saved === "sv") {
-      setLanguage(saved);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    window.localStorage.setItem("language", language);
-  }, [language]);
 
   const value = React.useMemo<LanguageContextValue>(
     () => ({
