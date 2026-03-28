@@ -39,8 +39,13 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   icons: {
-    icon: [{ url: "/lacueva_png.png", type: "image/png" }],
-    apple: [{ url: "/lacueva_png.png", type: "image/png" }],
+    icon: [
+      { url: "/lacueva_png.png", type: "image/png", sizes: "512x512" },
+      { url: "/lacueva_png.png", type: "image/png", sizes: "192x192" },
+      { url: "/lacueva_png.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/lacueva_png.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/lacueva_png.png",
   },
   openGraph: {
     type: "website",
