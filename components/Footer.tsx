@@ -23,7 +23,7 @@ export function Footer() {
     [t("footer.section.contact")]: [
       { label: t("contact.info.address.content"), href: "#contact" },
       { label: t("contact.info.phone.content"), href: "tel:+34604127064" },
-      { label: t("contact.info.email.content"), href: "mailto:Lacueva708@gmail.com" },
+      { label: t("contact.info.email.content"), href: "mailto:lacueva708@gmail.com" },
     ],
   };
 

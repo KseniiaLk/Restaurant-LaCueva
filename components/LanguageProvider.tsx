@@ -147,7 +147,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.phone.title": "Phone",
     "contact.info.phone.content": "+34 604 12 70 64",
     "contact.info.email.title": "Email",
-    "contact.info.email.content": "Lacueva708@gmail.com",
+    "contact.info.email.content": "lacueva708@gmail.com",
     "contact.info.hours.title": "Hours",
     "contact.info.hours.content":
       "Mon–Fri: 18:00–01:30\nSat–Sun: 14:00–01:30",
@@ -304,7 +304,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.phone.title": "Teléfono",
     "contact.info.phone.content": "+34 604 12 70 64",
     "contact.info.email.title": "Correo",
-    "contact.info.email.content": "Lacueva708@gmail.com",
+    "contact.info.email.content": "lacueva708@gmail.com",
     "contact.info.hours.title": "Horario",
     "contact.info.hours.content":
       "Lun–vie: 18:00–01:30\nSáb–dom: 14:00–01:30",
@@ -453,7 +453,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.phone.title": "Telefon",
     "contact.info.phone.content": "+34 604 12 70 64",
     "contact.info.email.title": "E‑post",
-    "contact.info.email.content": "Lacueva708@gmail.com",
+    "contact.info.email.content": "lacueva708@gmail.com",
     "contact.info.hours.title": "Öppettider",
     "contact.info.hours.content":
       "Måndag–fredag: 18:00–01:30\nLördag–söndag: 14:00–01:30",
