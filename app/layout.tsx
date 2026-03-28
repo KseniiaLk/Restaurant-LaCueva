@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Grottan La Cueva" }],
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/lacueva_png.png", type: "image/png" }],
+    apple: [{ url: "/lacueva_png.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_ES",
