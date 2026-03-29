@@ -189,8 +189,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.story": "Nuestra historia",
     "about.paragraph1":
       "Bienvenido a nuestro restaurante sueco Grottan la Cueva. Aquí todo se prepara desde cero con cuidado, amor y profundo respeto por los ingredientes. Servimos comida tradicional sueca de la más alta calidad, rica en sabor y sobre todo con salsas en el centro, tal como creemos que debe saber. Bienvenido 💛",
-    "about.paragraph2":
-      "Cada visita es un momento para bajar el ritmo, disfrutar del ambiente y sentirse cómodo. Un lugar para buen ánimo, buena comida y tiempo bien aprovechado.",
+    "about.paragraph2": "",
     "about.feature.experience.title": "Disfruta cada bocado",
     "about.feature.experience.desc": "",
     "about.feature.team.title": "Equipo apasionado",

@@ -36,7 +36,7 @@ export function Menu() {
       name: t("menu.item.foto1.name"),
       description: t("menu.item.foto1.desc"),
       price: "€22",
-      image: "/Food.png?v=2",
+      image: "/Food11.JPG?v=1",
       category: "plato-principal",
       signature: true,
     },
@@ -69,7 +69,7 @@ export function Menu() {
       name: t("menu.item.food10.name"),
       description: t("menu.item.food10.desc"),
       price: "€24",
-      image: "/Food10.JPG?v=3",
+      image: "/Food101.jpg?v=1",
       category: "plato-principal",
     },
     {
