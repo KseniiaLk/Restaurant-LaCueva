@@ -59,8 +59,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.ribeye.desc": "Premium beef with red wine sauce and truffle oil",
     "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
-      "Iberico flank steak with béarnaise and your choice of potatoes.\nGratin or wedges",
-    "menu.signature": "Signature",
+      "Iberico flank steak with béarnaise and gratin",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravlax with dill-stewed potatoes",
     "menu.item.food9.name": "Meatballs with juniper and cream sauce",
@@ -214,8 +213,7 @@ const translations: Record<Language, Record<string, string>> = {
       "Carne premium con salsa de vino tinto y aceite de trufa",
     "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
-      "El Secreto de la Cueva con salsa bearnesa y patata a elección.\nGratinada o gajos",
-    "menu.signature": "Especialidad",
+      "Flank steak ibérico con salsa bearnesa y gratinado de patatas",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravlax con patatas al eneldo",
     "menu.item.food9.name": "Albóndigas suecas con salsa de enebro y nata",
@@ -364,8 +362,7 @@ const translations: Record<Language, Record<string, string>> = {
     "menu.item.ribeye.desc": "Premiumbiff med rödvinssås och tryffelolja",
     "menu.item.foto1.name": "El Secreto de la Cueva",
     "menu.item.foto1.desc":
-      "Iberisk flankstek med bearnaisesås och valfri potatis.\nGratäng eller klyftpotatis",
-    "menu.signature": "Signatur",
+      "Iberisk flankstek med bearnaisesås och potatisgratäng",
     "menu.item.foto5.name": "Gravlax",
     "menu.item.foto5.desc": "Gravad lax med dillstuvad potatis",
     "menu.item.food9.name": "Köttbullar med gräddsås",

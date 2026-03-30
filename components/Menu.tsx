@@ -38,7 +38,6 @@ export function Menu() {
       price: "€22",
       image: "/Food11.JPG?v=1",
       category: "plato-principal",
-      signature: true,
     },
     {
       id: "pasta-1",
@@ -150,7 +149,7 @@ export function Menu() {
           {visibleItems.map((item, index) => (
             <motion.div
               key={item.id}
-              className={`bg-card overflow-hidden rounded-2xl shadow-lg ${"signature" in item && item.signature ? "ring-2 ring-primary/50" : ""}`}
+              className="bg-card overflow-hidden rounded-2xl shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
@@ -162,13 +161,8 @@ export function Menu() {
                 alt={item.name}
                 className={`h-56 w-full object-cover ${item.image.startsWith("/Food2.") ? "object-[60%_center]" : ""}`}
               />
-              {"signature" in item && item.signature && (
-                <span className="bg-primary text-primary-foreground absolute right-3 top-3 rounded-full px-3 py-1 text-xs font-medium tracking-wider uppercase">
-                  {t("menu.signature")}
-                </span>
-              )}
             </div>
-              <div className={`p-4 ${item.id === "pasta-1" || item.id === "pasta-2" ? "pt-1" : ""}`}>
+              <div className="p-4">
                 <div className="mb-2 flex items-start justify-between gap-2">
                   <h3 className="text-foreground font-serif text-lg">
                     {item.name}
