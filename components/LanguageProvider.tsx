@@ -24,8 +24,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Book a Table",
     "nav.event": "Book an Event",
     "hero.badge": "Fine Dining Experience",
-    "hero.title.line1": "When laughter and good mood create an unforgettable",
-    "hero.title.line2": "memory",
+    "hero.title.line1": "When good taste meets",
+    "hero.title.line2": "joy",
     "hero.subtitle":
       "Experience culinary excellence in an atmosphere of refined elegance",
     "hero.cta.menu": "View Menu",
@@ -178,8 +178,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.book": "Reservar mesa",
     "nav.event": "Reservar evento",
     "hero.badge": "Experiencia de alta cocina",
-    "hero.title.line1": "Cuando la risa y el buen humor crean un recuerdo",
-    "hero.title.line2": "inolvidable",
+    "hero.title.line1": "Cuando el buen sabor encuentra la",
+    "hero.title.line2": "alegría",
     "hero.subtitle":
       "Vive la excelencia culinaria en un ambiente de elegancia refinada",
     "hero.cta.menu": "Ver menú",
