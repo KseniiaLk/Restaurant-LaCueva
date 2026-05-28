@@ -81,6 +81,8 @@
 }
 
 @theme inline {
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Cinzel", "Cormorant Garamond", serif;
   --font-cormorant: "Cormorant Garamond", serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);

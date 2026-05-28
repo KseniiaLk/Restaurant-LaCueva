@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
 import { getMetadataBase, getSiteUrl } from "@/lib/site";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const siteDescription =
   "Scandinavian cuisine and wine bar in Alicante city centre. Reserve a table or private event at Grottan La Cueva.";
@@ -75,9 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <RestaurantJsonLd />
         <LanguageProvider>{children}</LanguageProvider>
       </body>

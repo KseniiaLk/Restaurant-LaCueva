@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const appDir = path.dirname(fileURLToPath(import.meta.url));
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -22,6 +26,16 @@ const securityHeaders: { key: string; value: string }[] = [
 ];
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: appDir,
+    resolveAlias: {
+      tailwindcss: path.join(appDir, "node_modules/tailwindcss"),
+      "@tailwindcss/postcss": path.join(
+        appDir,
+        "node_modules/@tailwindcss/postcss",
+      ),
+    },
+  },
   async headers() {
     return [
       {
