@@ -11,6 +11,25 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { useLanguage } from "../providers/LanguageProvider";
+import { cn } from "../ui/utils";
+
+const OPENING_HOUR_DAYS = [
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
+] as const;
+
+const LATE_OPENING_DAYS = new Set(["friday", "saturday"]);
+
+function splitHourLine(line: string): [day: string, time: string] {
+  const sep = line.indexOf(": ");
+  if (sep === -1) return [line, ""];
+  return [line.slice(0, sep), line.slice(sep + 2)];
+}
 
 export function Contact() {
   const { t } = useLanguage();
@@ -160,7 +179,7 @@ export function Contact() {
       {
         icon: Clock,
         title: t("contact.info.hours.title"),
-        content: t("contact.info.hours.content"),
+        isHours: true as const,
       },
     ],
     [t],
@@ -495,16 +514,48 @@ export function Contact() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
+                {"isHours" in item && item.isHours ? (
+                  <div className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-2">
+                    <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                      <item.icon className="text-primary h-6 w-6" />
+                    </div>
+                    <h4 className="text-foreground self-center font-medium">
+                      {item.title}
+                    </h4>
+                    <div className="col-start-2 flex w-full flex-col gap-0.5 text-sm">
+                      {OPENING_HOUR_DAYS.map((day) => {
+                        const [dayLabel, time] = splitHourLine(
+                          t(`contact.info.hours.${day}`),
+                        );
+                        const highlight = LATE_OPENING_DAYS.has(day);
+                        return (
+                          <div
+                            key={day}
+                            className={cn(
+                              "grid w-full grid-cols-[1fr_auto] items-center gap-x-4 py-0.5",
+                              highlight
+                                ? "bg-primary/10 text-primary rounded-md font-semibold"
+                                : "text-muted-foreground",
+                            )}
+                          >
+                            <span>{dayLabel}</span>
+                            <span className="tabular-nums">{time}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : (
                 <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                  <div className="bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
                     <item.icon className="text-primary h-6 w-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="text-foreground mb-1 font-medium">
                       {item.title}
                     </h4>
                     <p className="text-muted-foreground flex items-center gap-2 whitespace-pre-line">
-                      {item.content}
+                      {"content" in item ? item.content : null}
                       {"whatsapp" in item && item.whatsapp && (
                         <a
                           href={`https://wa.me/${whatsappNumber}`}
@@ -525,6 +576,7 @@ export function Contact() {
                     </p>
                   </div>
                 </div>
+                )}
               </motion.div>
             ))}
 
