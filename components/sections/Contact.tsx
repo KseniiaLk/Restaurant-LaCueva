@@ -37,7 +37,7 @@ export function Contact() {
   const EMAILJS_TEMPLATE_ID = "template_lnb2p0s";
   const EMAILJS_EVENT_TEMPLATE_ID = "template_y7gabrp";
   const EMAILJS_PUBLIC_KEY = "ol8m9qtnLYjQWqHvS";
-  const RESTAURANT_EMAIL = "lacuevarestlacueva@gmail.com";
+  const RESTAURANT_EMAIL = "lacueva708@gmail.com";
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",

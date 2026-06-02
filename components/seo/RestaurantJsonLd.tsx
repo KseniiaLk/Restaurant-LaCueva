@@ -10,7 +10,7 @@ export function RestaurantJsonLd() {
     image: `${base}/MAIN.png`,
     url: base,
     telephone: "+34604127064",
-    email: "lacuevarestlacueva@gmail.com",
+    email: "lacueva708@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Calle Artilleros 3",
