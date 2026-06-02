@@ -45,10 +45,16 @@ function phoneFields(phone: string) {
   const trimmed = phone.trim();
   return {
     phone: trimmed,
+    telephone: trimmed,
+    tel: trimmed,
     user_phone: trimmed,
     phone_number: trimmed,
     mobile: trimmed,
+    mobile_phone: trimmed,
     contact_phone: trimmed,
+    customer_phone: trimmed,
+    reservation_phone: trimmed,
+    guest_phone: trimmed,
   };
 }
 
