@@ -31,6 +31,27 @@ function splitHourLine(line: string): [day: string, time: string] {
   return [line.slice(0, sep), line.slice(sep + 2)];
 }
 
+const PHONE_MIN_DIGITS = 8;
+
+function phoneDigitCount(value: string): number {
+  return value.replace(/\D/g, "").length;
+}
+
+function isValidPhone(value: string): boolean {
+  return phoneDigitCount(value.trim()) >= PHONE_MIN_DIGITS;
+}
+
+function phoneFields(phone: string) {
+  const trimmed = phone.trim();
+  return {
+    phone: trimmed,
+    user_phone: trimmed,
+    phone_number: trimmed,
+    mobile: trimmed,
+    contact_phone: trimmed,
+  };
+}
+
 export function Contact() {
   const { t } = useLanguage();
   const EMAILJS_SERVICE_ID = "service_lwi4o5j";
@@ -59,16 +80,38 @@ export function Contact() {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const phone = formData.phone.trim();
+    if (!phone) {
+      toast.error(t("contact.form.phoneRequired"));
+      return;
+    }
+    if (!isValidPhone(phone)) {
+      toast.error(t("contact.form.phoneInvalid"));
+      return;
+    }
     try {
+      const message = [
+        "Table reservation",
+        "",
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Mobile phone: ${phone}`,
+        `Date: ${formData.date}`,
+        `Time: ${formData.time}`,
+        `Guests: ${formData.guests}`,
+      ].join("\n");
+
       const params = {
         email: formData.email,
+        guest_email: formData.email,
         user_name: formData.name,
         name: formData.name,
-        phone: formData.phone,
+        ...phoneFields(phone),
         reservation_date: formData.date,
         reservation_time: formData.time,
         guests: formData.guests,
-        title: `Reservation for ${formData.guests} guests on ${formData.date} at ${formData.time}`,
+        message,
+        title: `Reservation: ${formData.name} | ${phone} | ${formData.date} ${formData.time}`,
       };
 
       await Promise.all([
@@ -103,20 +146,45 @@ export function Contact() {
 
   const handleEventSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const phone = eventData.phone.trim();
+    if (!phone) {
+      toast.error(t("contact.form.phoneRequired"));
+      return;
+    }
+    if (!isValidPhone(phone)) {
+      toast.error(t("contact.form.phoneInvalid"));
+      return;
+    }
     try {
+      const eventMessage =
+        eventData.message.trim() || t("events.form.messageEmpty");
+      const message = [
+        "Event request",
+        "",
+        `Name: ${eventData.name}`,
+        `Email: ${eventData.email}`,
+        `Mobile phone: ${phone}`,
+        `Date: ${eventData.date}`,
+        `Time: ${eventData.time}`,
+        `Guests: ${eventData.guests}`,
+        `Event type: ${t(`events.form.type.${eventData.type}`)}`,
+        `Message: ${eventMessage}`,
+      ].join("\n");
+
       const params = {
         email: eventData.email,
+        guest_email: eventData.email,
         user_name: eventData.name,
         name: eventData.name,
-        phone: eventData.phone,
+        ...phoneFields(phone),
         reservation_date: eventData.date,
         reservation_time: eventData.time,
         guests: eventData.guests,
         event_type: eventData.type,
         event_type_label: t(`events.form.type.${eventData.type}`),
-        message:
-          eventData.message.trim() || t("events.form.messageEmpty"),
-        title: `Event booking - ${eventData.type} on ${eventData.date} at ${eventData.time}`,
+        user_message: eventMessage,
+        message,
+        title: `Event: ${eventData.name} | ${phone} | ${eventData.date} ${eventData.time}`,
       };
 
       const sendToRestaurant = (templateId: string, templateParams: typeof params) =>
@@ -248,16 +316,24 @@ export function Contact() {
 
                 <div>
                   <label className="text-foreground mb-2 block text-sm">
-                    {t("contact.form.phone")}
+                    {t("contact.form.phone")}{" "}
+                    <span className="text-primary" aria-hidden>
+                      *
+                    </span>
                   </label>
                   <Input
                     type="tel"
+                    name="phone"
                     value={formData.phone}
                     onChange={(event) =>
                       setFormData({ ...formData, phone: event.target.value })
                     }
                     required
+                    minLength={8}
+                    inputMode="tel"
                     autoComplete="tel"
+                    placeholder="+34 600 000 000"
+                    aria-required
                     className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
@@ -376,16 +452,24 @@ export function Contact() {
 
                 <div>
                   <label className="text-foreground mb-2 block text-sm">
-                    {t("events.form.phone")}
+                    {t("events.form.phone")}{" "}
+                    <span className="text-primary" aria-hidden>
+                      *
+                    </span>
                   </label>
                   <Input
                     type="tel"
+                    name="phone"
                     value={eventData.phone}
                     onChange={(event) =>
                       setEventData({ ...eventData, phone: event.target.value })
                     }
                     required
+                    minLength={8}
+                    inputMode="tel"
                     autoComplete="tel"
+                    placeholder="+34 600 000 000"
+                    aria-required
                     className="border-border/80 bg-background focus-visible:border-primary/50 min-h-11 w-full px-4 py-3"
                   />
                 </div>
