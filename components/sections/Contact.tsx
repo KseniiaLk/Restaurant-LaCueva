@@ -1,16 +1,15 @@
 "use client";
 
-import * as React from "react";
 import emailjs from "@emailjs/browser";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import * as React from "react";
 import { toast } from "sonner";
 
-import { ImageWithFallback } from "../media/ImageWithFallback";
+import { useLanguage } from "../providers/LanguageProvider";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { useLanguage } from "../providers/LanguageProvider";
 import { cn } from "../ui/utils";
 
 const OPENING_HOUR_DAYS = [
@@ -228,8 +227,8 @@ export function Contact() {
   const whatsappNumber = "34604127064";
 
   const timeOptions = [
-    "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30",
-    "22:00", "22:30", "23:00", "23:30", "00:00", "00:30", "01:00", "01:30",
+    "17:00","17:30","18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30",
+    "22:00", "22:30", "23:00", "23:30",
   ];
 
   const contactInfo = React.useMemo(
@@ -736,3 +735,4 @@ export function Contact() {
     </section>
   );
 }
+
