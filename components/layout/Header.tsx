@@ -1,10 +1,10 @@
 "use client";
 
-import * as React from "react";
 import { Menu, X } from "lucide-react";
+import * as React from "react";
 
-import { Button } from "../ui/button";
 import { useLanguage } from "../providers/LanguageProvider";
+import { Button } from "../ui/button";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -24,6 +24,7 @@ export function Header() {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.story"), href: "#story" },
     { label: t("nav.menu"), href: "#menu" },
+    { label: "Eventos", href: "#events" }, 
     { label: t("nav.gallery"), href: "#gallery" },
     { label: t("nav.contact"), href: "#contact" },
   ];
