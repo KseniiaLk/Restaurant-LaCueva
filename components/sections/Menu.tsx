@@ -4,25 +4,26 @@ import { motion } from "motion/react";
 import * as React from "react";
 
 import { ImageWithFallback } from "../media/ImageWithFallback";
-import { Button } from "../ui/button";
 import { useLanguage } from "../providers/LanguageProvider";
+import { Button } from "../ui/button";
 
-  const ALLERGEN_IMAGES: Record<string, { src: string; alt: string }> = {
-      gluten: { src: "/allergens/gluten.svg", alt: "Gluten" },
-      lacteos: { src: "/allergens/lacteos.svg", alt: "Lácteos" },
-      pescado: { src: "/allergens/pescado.svg", alt: "Pescado" },
-      "frutos-secos": { src: "/allergens/frutos-secos.svg", alt: "Frutos secos" },
-      huevos: { src: "/allergens/huevos.svg", alt: "Huevos" },
-      crustaceos: {src: "/allergens/crustaceos.svg", alt: "Crustáceos"},
-      mostaza: {src: "/allergens/mostaza.svg",alt: "Mostaza"},
-    };
+
+const ALLERGEN_IMAGES: Record<string, { src: string; alt: string }> = {
+  gluten: { src: "/allergens/gluten.svg", alt: "Gluten" },
+  lacteos: { src: "/allergens/lacteos.svg", alt: "Lácteos" },
+  pescado: { src: "/allergens/pescado.svg", alt: "Pescado" },
+  "frutos-secos": { src: "/allergens/frutos-secos.svg", alt: "Frutos secos" },
+  huevos: { src: "/allergens/huevos.svg", alt: "Huevos" },
+  crustaceos: {src: "/allergens/crustaceos.svg", alt: "Crustáceos"},
+  mostaza: {src: "/allergens/mostaza.svg",alt: "Mostaza"},
+};
 
 export function Menu() {
   const { t } = useLanguage();
   const [showAll, setShowAll] = React.useState(false);
   const [activeFilter, setActiveFilter] = React.useState("all");
 
-  const menuItems = [
+ const menuItems = [
   {
     id: "chocolate-2",
     name: t("menu.item.foto8.name"),
@@ -42,7 +43,7 @@ export function Menu() {
     priceNote: "½ €7",
     image: "/Food7.png?v=2",
     category: "entradas",
-    // Gravlaxtoast
+   
     allergens: ["gluten", "pescado", "mostaza"],
   },
   {
@@ -52,7 +53,7 @@ export function Menu() {
     price: "€22",
     image: "/Food11.JPG?v=1",
     category: "plato-principal",
-    // Secreto con salsa bearnesa
+    
     allergens: ["lacteos", "huevos"],
   },
   {
@@ -62,7 +63,7 @@ export function Menu() {
     price: "€20",
     image: "/Food2.jpg?v=3",
     category: "plato-principal",
-    // Albóndigas de cordero con feta y tzatziki
+   
     allergens: ["gluten", "huevos", "lacteos"],
   },
   {
@@ -72,7 +73,7 @@ export function Menu() {
     price: "€19",
     image: "/Food3.jpg?v=3",
     category: "plato-principal",
-    // Wallenbergare
+
     allergens: ["lacteos", "huevos"],
   },
   {
@@ -82,7 +83,7 @@ export function Menu() {
     price: "€18",
     image: "/Food9.png?v=2",
     category: "plato-principal",
-    // Albóndigas suecas
+  
     allergens: ["gluten", "huevos", "lacteos"],
   },
   {
@@ -92,7 +93,7 @@ export function Menu() {
     price: "€26.50",
     image: "/Food101.jpg?v=1",
     category: "plato-principal",
-    // Plato degustación
+    
     allergens: ["gluten", "pescado", "lacteos", "huevos", "crustaceos"],
   },
   {
@@ -177,39 +178,61 @@ export function Menu() {
           {visibleItems.map((item, index) => (
             <motion.div
               key={item.id}
-              className="bg-card overflow-hidden rounded-2xl shadow-lg"
+              className="bg-card overflow-hidden rounded-2xl shadow-lg flex flex-col justify-between"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <div className="relative">
-              <ImageWithFallback
-                src={item.image}
-                alt={item.name}
-                className={`h-56 w-full object-cover ${item.image.startsWith("/Food2.") ? "object-[60%_center]" : ""}`}
-              />
-            </div>
-              <div className="p-4">
-                <div className="mb-2 flex items-start justify-between gap-2">
-                  <h3 className="text-foreground font-serif text-lg">
-                    {item.name}
-                  </h3>
-                  <div className="text-right">
-                    <span className="text-primary text-sm font-medium block">
-                      {item.price}
-                    </span>
-                    {"priceNote" in item && (item as { priceNote?: string }).priceNote && (
-                      <span className="text-primary text-sm font-medium block">
-                        {(item as { priceNote: string }).priceNote}
-                      </span>
-                    )}
-                  </div>
+              <div>
+                <div className="relative">
+                  <ImageWithFallback
+                    src={item.image}
+                    alt={item.name}
+                    className={`h-56 w-full object-cover ${item.image.startsWith("/Food2.") ? "object-[60%_center]" : ""}`}
+                  />
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  {item.description}
-                </p>
+                <div className="p-4">
+                  <div className="mb-2 flex items-start justify-between gap-2">
+                    <h3 className="text-foreground font-serif text-lg">
+                      {item.name}
+                    </h3>
+                    <div className="text-right">
+                      <span className="text-primary text-sm font-medium block">
+                        {item.price}
+                      </span>
+                      {"priceNote" in item && (item as { priceNote?: string }).priceNote && (
+                        <span className="text-primary text-sm font-medium block">
+                          {(item as { priceNote: string }).priceNote}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {item.description}
+                  </p>
+                </div>
               </div>
+
+            
+              {item.allergens && item.allergens.length > 0 && (
+                <div className="px-4 pb-4 flex flex-wrap gap-2 items-center">
+                  {item.allergens.map((allergen) => {
+                    const allergenData = ALLERGEN_IMAGES[allergen];
+                    if (!allergenData) return null;
+
+                    return (
+                      <img
+                        key={allergen}
+                        src={allergenData.src}
+                        alt={allergenData.alt}
+                        title={t(`menu.allergen.${allergen}`) || allergenData.alt}
+                        className="h-6 w-6 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                      />
+                    );
+                  })}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
