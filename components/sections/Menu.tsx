@@ -7,87 +7,115 @@ import { ImageWithFallback } from "../media/ImageWithFallback";
 import { Button } from "../ui/button";
 import { useLanguage } from "../providers/LanguageProvider";
 
+  const ALLERGEN_IMAGES: Record<string, { src: string; alt: string }> = {
+      gluten: { src: "/allergens/gluten.svg", alt: "Gluten" },
+      lacteos: { src: "/allergens/lacteos.svg", alt: "Lácteos" },
+      pescado: { src: "/allergens/pescado.svg", alt: "Pescado" },
+      "frutos-secos": { src: "/allergens/frutos-secos.svg", alt: "Frutos secos" },
+      huevos: { src: "/allergens/huevos.svg", alt: "Huevos" },
+      crustaceos: {src: "/allergens/crustaceos.svg", alt: "Crustáceos"},
+      mostaza: {src: "/allergens/mostaza.svg",alt: "Mostaza"},
+    };
+
 export function Menu() {
   const { t } = useLanguage();
   const [showAll, setShowAll] = React.useState(false);
   const [activeFilter, setActiveFilter] = React.useState("all");
 
   const menuItems = [
-    {
-      id: "chocolate-2",
-      name: t("menu.item.foto8.name"),
-      description: t("menu.item.foto8.desc"),
-      price: "€11",
-      priceNote: "½ €7",
-      image: "/Food8.png?v=2",
-      category: "entradas",
-    },
-    {
-      id: "salmon-2",
-      name: t("menu.item.foto7.name"),
-      description: t("menu.item.foto7.desc"),
-      price: "€11",
-      priceNote: "½ €7",
-      image: "/Food7.png?v=2",
-      category: "entradas",
-    },
-    {
-      id: "ribeye-1",
-      name: t("menu.item.foto1.name"),
-      description: t("menu.item.foto1.desc"),
-      price: "€22",
-      image: "/Food11.JPG?v=1",
-      category: "plato-principal",
-    },
-    {
-      id: "pasta-1",
-      name: t("menu.item.foto2.name"),
-      description: t("menu.item.foto2.desc"),
-      price: "€20",
-      image: "/Food2.jpg?v=3",
-      category: "plato-principal",
-    },
-    {
-      id: "salmon-1",
-      name: t("menu.item.foto3.name"),
-      description: t("menu.item.foto3.desc"),
-      price: "€19",
-      image: "/Food3.jpg?v=3",
-      category: "plato-principal",
-    },
-    {
-      id: "food-9",
-      name: t("menu.item.food9.name"),
-      description: t("menu.item.food9.desc"),
-      price: "€18",
-      image: "/Food9.png?v=2",
-      category: "plato-principal",
-    },
-    {
-      id: "food-10",
-      name: t("menu.item.food10.name"),
-      description: t("menu.item.food10.desc"),
-      price: "€26.50",
-      image: "/Food101.jpg?v=1",
-      category: "plato-principal",
-    },
-    {
-      id: "pasta-2",
-      name: t("menu.item.foto6.name"),
-      description: t("menu.item.foto6.desc"),
-      price: "€11",
-      image: "/Food6.jpg?v=3",
-      category: "postres",
-    },
-    {
-      id: "chocolate-1",
-      name: t("menu.item.chocolate.name"),
-      description: t("menu.item.chocolate.desc"),
-      price: "€8",
-      image: "/Food4.png?v=2",
-      category: "postres",
-    },
-  ];
+  {
+    id: "chocolate-2",
+    name: t("menu.item.foto8.name"),
+    description: t("menu.item.foto8.desc"),
+    price: "€11",
+    priceNote: "½ €7",
+    image: "/Food8.png?v=2",
+    category: "entradas",
+    // Skagen
+    allergens: ["gluten", "crustaceos", "huevos"],
+  },
+  {
+    id: "salmon-2",
+    name: t("menu.item.foto7.name"),
+    description: t("menu.item.foto7.desc"),
+    price: "€11",
+    priceNote: "½ €7",
+    image: "/Food7.png?v=2",
+    category: "entradas",
+    // Gravlaxtoast
+    allergens: ["gluten", "pescado", "mostaza"],
+  },
+  {
+    id: "ribeye-1",
+    name: t("menu.item.foto1.name"),
+    description: t("menu.item.foto1.desc"),
+    price: "€22",
+    image: "/Food11.JPG?v=1",
+    category: "plato-principal",
+    // Secreto con salsa bearnesa
+    allergens: ["lacteos", "huevos"],
+  },
+  {
+    id: "pasta-1",
+    name: t("menu.item.foto2.name"),
+    description: t("menu.item.foto2.desc"),
+    price: "€20",
+    image: "/Food2.jpg?v=3",
+    category: "plato-principal",
+    // Albóndigas de cordero con feta y tzatziki
+    allergens: ["gluten", "huevos", "lacteos"],
+  },
+  {
+    id: "salmon-1",
+    name: t("menu.item.foto3.name"),
+    description: t("menu.item.foto3.desc"),
+    price: "€19",
+    image: "/Food3.jpg?v=3",
+    category: "plato-principal",
+    // Wallenbergare
+    allergens: ["lacteos", "huevos"],
+  },
+  {
+    id: "food-9",
+    name: t("menu.item.food9.name"),
+    description: t("menu.item.food9.desc"),
+    price: "€18",
+    image: "/Food9.png?v=2",
+    category: "plato-principal",
+    // Albóndigas suecas
+    allergens: ["gluten", "huevos", "lacteos"],
+  },
+  {
+    id: "food-10",
+    name: t("menu.item.food10.name"),
+    description: t("menu.item.food10.desc"),
+    price: "€26.50",
+    image: "/Food101.jpg?v=1",
+    category: "plato-principal",
+    // Plato degustación
+    allergens: ["gluten", "pescado", "lacteos", "huevos", "crustaceos"],
+  },
+  {
+    id: "pasta-2",
+    name: t("menu.item.foto6.name"),
+    description: t("menu.item.foto6.desc"),
+    price: "€11",
+    image: "/Food6.jpg?v=3",
+    category: "postres",
+    // Bizcocho de almendra
+    allergens: ["gluten", "lacteos", "huevos", "frutos-secos"],
+  },
+  {
+    id: "chocolate-1",
+    name: t("menu.item.chocolate.name"),
+    description: t("menu.item.chocolate.desc"),
+    price: "€8",
+    image: "/Food4.png?v=2",
+    category: "postres",
+    // Crumble
+    allergens: ["gluten", "lacteos", "huevos"],
+  },
+];
 
   const filters = [
     { id: "all", label: t("menu.filter.all") },
