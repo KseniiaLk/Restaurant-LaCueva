@@ -16,6 +16,7 @@ const ALLERGEN_IMAGES: Record<string, { src: string; alt: string }> = {
   huevos: { src: "/allergens/huevos.svg", alt: "Huevos" },
   crustaceos: {src: "/allergens/crustaceos.svg", alt: "Crustáceos"},
   mostaza: {src: "/allergens/mostaza.svg",alt: "Mostaza"},
+  soja: {src: "/allergens/soja.svg",alt: "Soja"},
 };
 
 export function Menu() {
@@ -32,8 +33,7 @@ export function Menu() {
     priceNote: "½ €7",
     image: "/Food8.png?v=2",
     category: "entradas",
-    // Skagen
-    allergens: ["gluten", "crustaceos", "huevos"],
+    allergens: ["gluten", "crustaceos", "huevos", "lacteos"],
   },
   {
     id: "salmon-2",
@@ -44,7 +44,7 @@ export function Menu() {
     image: "/Food7.png?v=2",
     category: "entradas",
    
-    allergens: ["gluten", "pescado", "mostaza"],
+    allergens: ["gluten", "pescado", "mostaza", "lacteos","huevos"],
   },
   {
     id: "ribeye-1",
@@ -54,7 +54,7 @@ export function Menu() {
     image: "/Food11.JPG?v=1",
     category: "plato-principal",
     
-    allergens: ["lacteos", "huevos"],
+    allergens: ["lacteos", "huevos", "soja"],
   },
   {
     id: "pasta-1",
@@ -84,7 +84,7 @@ export function Menu() {
     image: "/Food9.png?v=2",
     category: "plato-principal",
   
-    allergens: ["gluten", "huevos", "lacteos"],
+   allergens: ["gluten", "huevos", "lacteos", "soja"],
   },
   {
     id: "food-10",
@@ -114,7 +114,7 @@ export function Menu() {
     image: "/Food4.png?v=2",
     category: "postres",
     // Crumble
-    allergens: ["gluten", "lacteos", "huevos"],
+    allergens: ["gluten"],
   },
 ];
 
